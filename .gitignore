@@ -1,0 +1,15 @@
+# Entorno virtual local (se reconstruye desde el archivo de dependencias)
+.venv/
+
+# Secretos: nunca se versionan. La plantilla es .env.example
+.env
+
+# Artefactos de Python
+__pycache__/
+*.py[cod]
+
+# Checkpoints automáticos de Jupyter
+.ipynb_checkpoints/
+
+# Archivos del sistema macOS
+.DS_Store
