@@ -1,0 +1,64 @@
+{
+  "version": "3.0.0",
+  "darkMode": true,
+  "gridEnabling": false,
+  "currentViewName": null,
+  "defaultView": {
+    "detailLevel": "All",
+    "relationshipMode": "All",
+    "tablePositions": [
+      {
+        "name": "dim_artist",
+        "schemaName": "public",
+        "x": 42.39847811729385,
+        "y": 338.27699845895427
+      },
+      {
+        "name": "dim_year",
+        "schemaName": "public",
+        "x": -474.37564987670214,
+        "y": 430.7893468210573
+      },
+      {
+        "name": "dim_category",
+        "schemaName": "public",
+        "x": -501.41814023256427,
+        "y": 626.8968651046707
+      },
+      {
+        "name": "dim_track",
+        "schemaName": "public",
+        "x": 738.2245995146657,
+        "y": 349.22330200100237
+      },
+      {
+        "name": "dim_genre",
+        "schemaName": "public",
+        "x": 738.2245995146657,
+        "y": 833.4409533061083
+      },
+      {
+        "name": "bridge_track_genre",
+        "schemaName": "public",
+        "x": 974.1106789214073,
+        "y": 637.9050253934666
+      },
+      {
+        "name": "fact_award",
+        "schemaName": "public",
+        "x": -38.38724764854396,
+        "y": 562.8968651046707
+      },
+      {
+        "name": "fact_track_artist",
+        "schemaName": "public",
+        "x": 406.5940326054464,
+        "y": 575.0815039510593
+      }
+    ],
+    "tableGroupCollapseStates": [],
+    "stickyNoteLayouts": [],
+    "referencePaths": []
+  },
+  "views": {}
+}

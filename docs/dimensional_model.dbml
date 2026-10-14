@@ -1,0 +1,93 @@
+Project music_dw {
+  database_type: 'PostgreSQL'
+  Note: '''
+  Data Warehouse dimensional: constelación de dos hechos que comparten dim_artist.
+  - fact_award: reconocimiento Grammy (1958-2018).
+  - fact_track_artist: catálogo actual de Spotify.
+  Brazo copo de nieve: dim_track -> bridge_track_genre -> dim_genre.
+  Decisiones referenciadas (Dn) en notebooks/data_profiling.ipynb.
+  '''
+}
+
+Table dim_artist {
+  artist_key integer [pk, increment]
+  artist_bk varchar(255) [not null, unique, note: 'Nombre normalizado: minúsculas, sin tildes, espacios colapsados (D4, D10)']
+  artist_name varchar(255) [not null, note: 'Nombre para mostrar (D17)']
+  is_awarded boolean [not null, default: false, note: 'Tiene al menos un premio atribuido (D15)']
+  Note: 'Dimensión conformada. Incluye todos los artistas de Spotify; los premiados se marcan con is_awarded.'
+}
+
+Table dim_year {
+  year_key integer [pk, increment]
+  year smallint [not null, unique]
+  decade smallint [not null, note: '(year / 10) * 10 (D16)']
+}
+
+Table dim_category {
+  category_key integer [pk, increment]
+  category_bk varchar(255) [not null, unique, note: 'Nombre normalizado (D18)']
+  category_name varchar(255) [not null, note: 'Nombre para mostrar (D18)']
+  is_new_artist boolean [not null, default: false, note: 'Categorías con New Artist (D2)']
+}
+
+Table dim_track {
+  track_key integer [pk, increment]
+  track_id varchar(22) [not null, unique, note: 'ID de Spotify']
+  track_name varchar(500) [not null]
+  song_bk varchar(800) [not null, note: 'Clave de consolidación de versiones: artists + track_name (D8)']
+  is_song_representative boolean [not null, note: 'Versión de mayor popularidad de la canción (D8)']
+  audio_analyzed boolean [not null, note: 'False si tempo, danceability y valence son 0 en la fuente (D9)']
+}
+
+Table dim_genre {
+  genre_key integer [pk, increment]
+  genre_name varchar(100) [not null, unique]
+}
+
+Table bridge_track_genre {
+  track_key integer [not null]
+  genre_key integer [not null]
+  indexes {
+    (track_key, genre_key) [pk]
+  }
+  Note: 'Relación muchos a muchos pista-género (grano de la fuente: pista x género).'
+}
+
+Table fact_award {
+  award_artist_key bigint [pk, increment]
+  year_key integer [not null]
+  category_key integer [not null]
+  artist_key integer [not null]
+  nominee varchar(500) [not null, note: 'Dimensión degenerada']
+  award_count smallint [not null, default: 1]
+  indexes {
+    (year_key, category_key, nominee, artist_key) [unique, name: 'uq_fact_award_grain']
+  }
+  Note: 'Grano: un premio Grammy (año, categoría, nominado) acreditado a un artista emparejado. Un premio compartido por N artistas genera N filas (D4).'
+}
+
+Table fact_track_artist {
+  track_artist_key bigint [pk, increment]
+  track_key integer [not null]
+  artist_key integer [not null]
+  popularity smallint [not null, note: 'Máximo por track_id (D7)']
+  danceability numeric(10,6) [note: 'Nulo si audio_analyzed = false (D9)']
+  energy numeric(10,6) [not null]
+  valence numeric(10,6) [note: 'Nulo si audio_analyzed = false (D9)']
+  acousticness numeric(10,6) [not null]
+  tempo numeric(7,3) [note: 'Nulo si audio_analyzed = false (D9)']
+  n_artists smallint [not null]
+  is_collaboration boolean [not null, note: 'n_artists > 1']
+  indexes {
+    (track_key, artist_key) [unique, name: 'uq_fact_track_artist_grain']
+  }
+  Note: 'Grano: la participación de un artista en una pista única de Spotify (después de D6, D7, D14). Las medidas de la pista se repiten por artista.'
+}
+
+Ref: fact_award.year_key > dim_year.year_key
+Ref: fact_award.category_key > dim_category.category_key
+Ref: fact_award.artist_key > dim_artist.artist_key
+Ref: fact_track_artist.track_key > dim_track.track_key
+Ref: fact_track_artist.artist_key > dim_artist.artist_key
+Ref: bridge_track_genre.track_key > dim_track.track_key
+Ref: bridge_track_genre.genre_key > dim_genre.genre_key
