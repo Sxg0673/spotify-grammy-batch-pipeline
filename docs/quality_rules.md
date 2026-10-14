@@ -1,6 +1,6 @@
 # Reglas de calidad de datos
 
-Estado: capa raw definida. Capa preparada pendiente del modelo dimensional.
+Estado: capas raw y preparada definidas.
 
 Fuente de evidencia: `notebooks/data_profiling.ipynb` (los números entre paréntesis son celdas del notebook; RS/RK/RG/RX son los riesgos registrados en él).
 
@@ -47,13 +47,20 @@ Fuente de evidencia: `notebooks/data_profiling.ipynb` (los números entre parén
 | DQ-G07 | `artist` | Completitud | `artist` no es nulo | ≥ 50 % | Warning | Los nulos son estructurales por categoría (33); hoy 61.75 %; por debajo del 50 % la mayoría de premios no sería atribuible | RG02 | R1–R4 |
 | DQ-G08 | `nominee` | Completitud | `nominee` no es nulo | ≥ 99 % | Warning | 0.125 % nulo, 6 filas (34); D2 depende de `nominee` | RG03 | R1, R3, R4 |
 
-## Capa preparada (`DQ-P`)
+## Capa preparada (`prepared`)
 
-Pendiente: se define después del modelo dimensional, porque verifica condiciones que deben cumplirse tras la transformación sobre el esquema preparado. Reglas anticipadas:
+Valida los archivos de `data/work/<run_id>/prepared/` antes de la carga. Pregunta del gate (§6.9): ¿la transformación produjo datos aptos para cargar?
 
-- No hay registros del año 2019 (verifica D1). Critical.
-- Toda atribución premio–artista tiene clave de artista no nula y no vacía. Critical.
-- `track_id` es único en la capa de pistas (verifica D6 y D7). Critical.
-- Si `audio_analizado` es falso, `danceability`, `valence` y `tempo` son nulos; si es verdadero, están en rango y `tempo` es mayor que 0 (verifica D9). Critical.
-- Tasa de emparejamiento de las filas Grammy atribuibles por encima de un umbral (salud de la integración). Warning.
-- Integridad referencial de los hechos contra las dimensiones. Critical.
+| Rule ID | Tabla(s) | Dimensión | Regla | Métrica / umbral | Severidad | Justificación | Req. |
+|---|---|---|---|---|---|---|---|
+| DQ-P01 | Todas | Estructura | Cada archivo tiene las columnas esperadas y al menos 1 fila | 100 % | Critical | Esquema del modelo (`docs/dimensional_model.md`) | R1–R4 |
+| DQ-P02 | Dimensiones | Unicidad | Llaves de negocio únicas: `artist_bk`, `track_id`, `year`, `category_bk`, `genre_name` | 100 % | Critical | Invariante de D17, D18 y de S3 | R1–R4 |
+| DQ-P03 | Hechos y puente | Unicidad | Grano único: (`year`, `category_bk`, `nominee`, `artist_bk`); (`track_id`, `artist_bk`); (`track_id`, `genre_name`) | 100 % | Critical | Invariante de D4, D6 y D7 | R1–R4 |
+| DQ-P04 | Hechos y puente | Integridad | Toda llave de un hecho o del puente existe en su dimensión | 100 % | Critical | La carga exige integridad referencial | R1–R4 |
+| DQ-P05 | `dim_year`, `fact_award` | Validez | `year` entre 1958 y 2018; `decade` en {1950, …, 2010} | 100 % | Critical | Invariante de D1 y D16 | R1, R3 |
+| DQ-P06 | `fact_track_artist` | Validez | `popularity` entre 0 y 100; `energy` y `acousticness` no nulos y en [0, 1]; `danceability` y `valence` nulos o en [0, 1]; `tempo` nulo o > 0 | 100 % | Critical | Contrato de Spotify e invariantes de D7 y D9 | R1, R4 |
+| DQ-P07 | `fact_track_artist` | Consistencia | `tempo`, `danceability` y `valence` son nulas a la vez o no nulas a la vez | 100 % | Critical | Invariante de D9 | R1 |
+| DQ-P08 | `fact_track_artist` | Consistencia | `n_artists` ≥ 1 e `is_collaboration` = (`n_artists` > 1) | 100 % | Critical | Invariante de S5 | R3 |
+| DQ-P09 | `dim_track` | Consistencia | Cada `song_bk` tiene exactamente una versión representativa | 100 % | Critical | Invariante de D8 | R1, R3, R4 |
+| DQ-P10 | `dim_artist`, `fact_award` | Consistencia | Los artistas con `is_awarded` son exactamente los presentes en `fact_award` | 100 % | Critical | Invariante de D15 | R1–R4 |
+| DQ-P11 | `transform_report.json` | Integración | Tasa de emparejamiento de filas Grammy atribuibles | ≥ 40 % | Warning | El profiling midió entre 44 % y 49 %; una caída indica una regresión en la normalización o en la separación de nombres. Se confirma con la primera corrida | R1–R4 |
