@@ -33,8 +33,8 @@ Table dim_category {
 Table dim_track {
   track_key integer [pk, increment]
   track_id varchar(22) [not null, unique, note: 'ID de Spotify']
-  track_name varchar(500) [not null]
-  song_bk varchar(800) [not null, note: 'Clave de consolidación de versiones: artists + track_name (D8)']
+  track_name text [not null]
+  song_bk text [not null, note: 'Clave de consolidación de versiones: artists + track_name (D8)']
   is_song_representative boolean [not null, note: 'Versión de mayor popularidad de la canción (D8)']
   audio_analyzed boolean [not null, note: 'False si tempo, danceability y valence son 0 en la fuente (D9)']
 }
