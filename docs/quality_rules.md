@@ -63,4 +63,4 @@ Valida los archivos de `data/work/<run_id>/prepared/` antes de la carga. Pregunt
 | DQ-P08 | `fact_track_artist` | Consistencia | `n_artists` ≥ 1 e `is_collaboration` = (`n_artists` > 1) | 100 % | Critical | Invariante de S5 | R3 |
 | DQ-P09 | `dim_track` | Consistencia | Cada `song_bk` tiene exactamente una versión representativa | 100 % | Critical | Invariante de D8 | R1, R3, R4 |
 | DQ-P10 | `dim_artist`, `fact_award` | Consistencia | Los artistas con `is_awarded` son exactamente los presentes en `fact_award` | 100 % | Critical | Invariante de D15 | R1–R4 |
-| DQ-P11 | `transform_report.json` | Integración | Tasa de emparejamiento de filas Grammy atribuibles | ≥ 40 % | Warning | El profiling midió entre 44 % y 49 %; una caída indica una regresión en la normalización o en la separación de nombres. Se confirma con la primera corrida | R1–R4 |
+| DQ-P11 | `transform_report.json` | Integración | Tasa de emparejamiento de filas Grammy atribuibles | ≥ 40 % | Warning | El profiling midió entre 44 % y 49 %; una caída indica una regresión en la normalización o en la separación de nombres. Primera corrida: 49.48 % (1,342 de 2,712 filas atribuibles) | R1–R4 |
