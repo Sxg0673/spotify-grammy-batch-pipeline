@@ -1,7 +1,7 @@
 {
   "expectations": [
     {
-      "id": "d9f15823-a83d-450d-ab04-e9683a04521d",
+      "id": "10dc91de-b49d-4934-aef9-09db12c4efe9",
       "kwargs": {
         "column_set": [
           "track_id",
@@ -20,7 +20,7 @@
       "type": "expect_table_columns_to_match_set"
     },
     {
-      "id": "0120ebc9-5cf4-454a-9d4b-72bdb50e7deb",
+      "id": "78dcc67c-0265-4fec-802c-020af090903e",
       "kwargs": {
         "min_value": 1
       },
@@ -33,7 +33,7 @@
       "type": "expect_table_row_count_to_be_between"
     },
     {
-      "id": "c27c1454-02d5-4522-8b84-0fa0d78127c4",
+      "id": "40d884c0-70fd-4551-baac-8d84a6810ba5",
       "kwargs": {
         "column": "track_id"
       },
@@ -46,7 +46,7 @@
       "type": "expect_column_values_to_not_be_null"
     },
     {
-      "id": "0f1e567d-e90e-4ff7-9873-a962a6520768",
+      "id": "b24ea9aa-4bdc-4d0b-a2b0-3951fb7d39a1",
       "kwargs": {
         "column": "track_id"
       },

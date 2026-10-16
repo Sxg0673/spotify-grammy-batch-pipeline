@@ -1,7 +1,7 @@
 {
   "expectations": [
     {
-      "id": "d48a099a-b900-4955-ab17-a205017e62cd",
+      "id": "09f6a844-36fe-4f9b-a518-74ac7d10b0e4",
       "kwargs": {
         "column_set": [
           "genre_name"
@@ -16,7 +16,7 @@
       "type": "expect_table_columns_to_match_set"
     },
     {
-      "id": "7fd3fdd6-42a0-4779-a6ce-8c8a3519a3d5",
+      "id": "335c7994-cc50-48c4-8752-b0ca94f166c3",
       "kwargs": {
         "min_value": 1
       },
@@ -29,7 +29,7 @@
       "type": "expect_table_row_count_to_be_between"
     },
     {
-      "id": "73afd04f-02d8-46ad-b78b-b0c68871ba7a",
+      "id": "a515952c-b7ce-4ae5-a010-73e12e1e8a25",
       "kwargs": {
         "column": "genre_name"
       },
@@ -42,7 +42,7 @@
       "type": "expect_column_values_to_not_be_null"
     },
     {
-      "id": "5298ab62-d62d-4efa-ba09-5ea74325946d",
+      "id": "d65eb2ce-164f-439c-970f-a521ceec4202",
       "kwargs": {
         "column": "genre_name"
       },

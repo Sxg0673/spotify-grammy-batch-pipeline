@@ -1,7 +1,7 @@
 {
   "expectations": [
     {
-      "id": "51012ab0-0fe6-4028-9368-eefcc1f5ed8d",
+      "id": "87acbf82-7282-4834-adeb-d9791b846b74",
       "kwargs": {
         "column_set": [
           "track_id",
@@ -25,7 +25,7 @@
       "type": "expect_table_columns_to_match_set"
     },
     {
-      "id": "8dc243c5-960b-41a8-897c-94defdee8419",
+      "id": "5892c454-e482-4ff1-b949-5edb2fb4e5e8",
       "kwargs": {
         "min_value": 1
       },
@@ -38,7 +38,7 @@
       "type": "expect_table_row_count_to_be_between"
     },
     {
-      "id": "cce6fcfb-2e6f-4a60-b5f3-2f70466c9ae9",
+      "id": "94bd2d14-75eb-4d16-bf5d-6fe38205c5f9",
       "kwargs": {
         "column_list": [
           "track_id",
@@ -54,7 +54,7 @@
       "type": "expect_compound_columns_to_be_unique"
     },
     {
-      "id": "13ab428b-3603-474b-84e4-2d848eb20cd1",
+      "id": "956423c0-2f06-4ce1-b53c-4553009bf0fc",
       "kwargs": {
         "column": "popularity"
       },
@@ -67,7 +67,7 @@
       "type": "expect_column_values_to_not_be_null"
     },
     {
-      "id": "292f232b-75ef-475f-b039-6d9d473ec2e0",
+      "id": "dc274b27-cd3a-49b8-8ffc-1e6468bb3711",
       "kwargs": {
         "column": "popularity",
         "max_value": 100.0,
@@ -82,7 +82,7 @@
       "type": "expect_column_values_to_be_between"
     },
     {
-      "id": "c10d83ea-10d1-47ea-bfcf-82315888e361",
+      "id": "c56c2932-e526-4559-bad9-7052b4f2622d",
       "kwargs": {
         "column": "energy"
       },
@@ -95,7 +95,7 @@
       "type": "expect_column_values_to_not_be_null"
     },
     {
-      "id": "e6c7a340-4be4-4e2c-b5c4-9a0190562c8b",
+      "id": "881c98cb-93b1-4b20-8a97-b7f7fb518fbb",
       "kwargs": {
         "column": "energy",
         "max_value": 1.0,
@@ -110,7 +110,7 @@
       "type": "expect_column_values_to_be_between"
     },
     {
-      "id": "18c28349-145e-475a-93d9-605e2d2b7ef6",
+      "id": "5da04210-a989-496a-b8f6-4aecdc0010d4",
       "kwargs": {
         "column": "acousticness"
       },
@@ -123,7 +123,7 @@
       "type": "expect_column_values_to_not_be_null"
     },
     {
-      "id": "73755737-5292-46de-835a-26f7b9a0b172",
+      "id": "d4fdeee2-081b-45ec-8919-84f847847ee6",
       "kwargs": {
         "column": "acousticness",
         "max_value": 1.0,
@@ -138,7 +138,7 @@
       "type": "expect_column_values_to_be_between"
     },
     {
-      "id": "44030479-e3ae-4144-89cd-2405a7046a49",
+      "id": "2a15308f-bea3-436a-9e6d-a270e76aa7df",
       "kwargs": {
         "column": "danceability",
         "max_value": 1.0,
@@ -153,7 +153,7 @@
       "type": "expect_column_values_to_be_between"
     },
     {
-      "id": "7714a338-1d31-4070-9de3-9f4ca5d0bb68",
+      "id": "2b28257f-7d98-42ae-8258-1603626e472d",
       "kwargs": {
         "column": "valence",
         "max_value": 1.0,
@@ -168,7 +168,7 @@
       "type": "expect_column_values_to_be_between"
     },
     {
-      "id": "5c07b338-66c6-45a1-9ec5-7362b2eea845",
+      "id": "51988f78-859c-4976-8df2-f477531d9830",
       "kwargs": {
         "column": "tempo",
         "min_value": 0.0,
@@ -183,7 +183,7 @@
       "type": "expect_column_values_to_be_between"
     },
     {
-      "id": "e2e4e996-b229-406b-8d72-cf8393f9f8de",
+      "id": "3aa7f091-6994-4855-aadd-2990994da35d",
       "kwargs": {
         "column": "n_artists",
         "min_value": 1.0

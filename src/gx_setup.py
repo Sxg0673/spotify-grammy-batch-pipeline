@@ -151,17 +151,18 @@ def get_data_source(ctx):
         return ctx.data_sources.add_pandas(name=DATA_SOURCE_NAME)
 
 
-def _signature(suite):
-    """Configuración de las expectativas sin sus identificadores (GX los regenera al guardar)."""
+def _signature(expectations):
+    """Configuración de las expectativas sin identificadores (GX los regenera al guardar),
+    ordenada (el orden de guardado de GX no es el de definición)."""
     firmas = []
-    for expectation in suite.expectations:
+    for expectation in expectations:
         try:
             config = expectation.configuration.to_json_dict()
         except AttributeError:
             config = expectation.model_dump(mode="json")
         config.pop("id", None)
         firmas.append(json.dumps(config, sort_keys=True, default=str))
-    return sorted(firmas)  # el orden de guardado de GX no es el de definición
+    return sorted(firmas)
 
 
 def register(ctx, data_source, asset_name, expectations, with_checkpoint):
@@ -176,17 +177,20 @@ def register(ctx, data_source, asset_name, expectations, with_checkpoint):
     except Exception:
         batch_definition = asset.add_batch_definition_whole_dataframe(batch_name)
 
-    # Expectation Suite
-    new_suite = gx.ExpectationSuite(name=f"{asset_name}_suite")
-    for expectation in expectations:
-        new_suite.add_expectation(expectation)
+    # Expectation Suite: solo se reescribe si alguna regla cambió.
+    # La suite guardada se lee ANTES de construir la nueva: en GX, agregar expectativas
+    # a una suite con el mismo nombre las suma a la guardada.
+    suite_name = f"{asset_name}_suite"
     try:
-        existing = ctx.suites.get(new_suite.name)
+        existing = ctx.suites.get(suite_name)
     except Exception:
         existing = None
-    if existing is not None and _signature(existing) == _signature(new_suite):
+    if existing is not None and _signature(existing.expectations) == _signature(expectations):
         suite, status = existing, "sin cambios"
     else:
+        new_suite = gx.ExpectationSuite(name=suite_name)
+        for expectation in expectations:
+            new_suite.add_expectation(expectation)
         suite = upsert(ctx.suites, new_suite)
         status = "actualizada" if existing is not None else "creada"
 

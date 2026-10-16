@@ -1,7 +1,7 @@
 {
   "expectations": [
     {
-      "id": "7224709c-7d56-4ef6-a4d1-a3874c00b098",
+      "id": "3288b4b7-0982-4dda-901b-e5cc1def1831",
       "kwargs": {
         "column_set": [
           "track_id",
@@ -25,7 +25,7 @@
       "type": "expect_table_columns_to_match_set"
     },
     {
-      "id": "91389d6c-535f-4683-b6c7-e41febc4045c",
+      "id": "1330cb12-3b4f-4fa8-b12b-1f3639a16096",
       "kwargs": {
         "min_value": 1
       },
@@ -38,7 +38,7 @@
       "type": "expect_table_row_count_to_be_between"
     },
     {
-      "id": "12ec7487-84c6-4d75-87bf-0ebbf8b35f9c",
+      "id": "01e3f69a-36c8-4f7a-ba5a-b937e212e152",
       "kwargs": {
         "column": "track_id"
       },
@@ -51,7 +51,7 @@
       "type": "expect_column_values_to_not_be_null"
     },
     {
-      "id": "46bac2f1-b159-49ff-a761-f1367fb2eef2",
+      "id": "77b614c0-11e5-48b8-9421-4b497b4b0f20",
       "kwargs": {
         "column_list": [
           "track_id",
@@ -68,7 +68,7 @@
       "type": "expect_compound_columns_to_be_unique"
     },
     {
-      "id": "8683d63d-6fcc-489a-8b2c-61ff0d402d5f",
+      "id": "14c68961-56ec-41cb-9c5a-1cf70a617e88",
       "kwargs": {
         "column": "popularity",
         "max_value": 100.0,
@@ -83,7 +83,7 @@
       "type": "expect_column_values_to_be_between"
     },
     {
-      "id": "d6000f7e-9b92-4a8a-9a77-1c645681b7f8",
+      "id": "523757ed-f9ba-480e-8230-07e69d60a96d",
       "kwargs": {
         "column": "danceability",
         "max_value": 1.0,
@@ -98,7 +98,7 @@
       "type": "expect_column_values_to_be_between"
     },
     {
-      "id": "1a0f2962-2619-49c4-8ea7-e9abc7452bdf",
+      "id": "c5db3d2a-c118-4d68-8411-d825c43d12d1",
       "kwargs": {
         "column": "energy",
         "max_value": 1.0,
@@ -113,7 +113,7 @@
       "type": "expect_column_values_to_be_between"
     },
     {
-      "id": "f297bb8d-9bbc-4c9d-8db6-6d60d77a74d8",
+      "id": "11c8b47d-cd38-423a-a2da-d89178bbc394",
       "kwargs": {
         "column": "valence",
         "max_value": 1.0,
@@ -128,7 +128,7 @@
       "type": "expect_column_values_to_be_between"
     },
     {
-      "id": "f80cc5a5-df22-4682-a508-a39501b4b586",
+      "id": "f0670c90-ffcd-45f3-b2cf-c97710ac9fac",
       "kwargs": {
         "column": "acousticness",
         "max_value": 1.0,
@@ -143,7 +143,7 @@
       "type": "expect_column_values_to_be_between"
     },
     {
-      "id": "c90f5980-c88e-4749-9716-4942fe509a6a",
+      "id": "ac581f31-6d0f-403a-9a82-87f9c618f8fe",
       "kwargs": {
         "column": "tempo",
         "min_value": 0.0
@@ -157,7 +157,7 @@
       "type": "expect_column_values_to_be_between"
     },
     {
-      "id": "b8f16844-4759-4f3e-b2f7-f9b7f7f8b2ff",
+      "id": "38e5328b-b930-4d81-a2c6-2dd2b8dc8f9f",
       "kwargs": {
         "column": "artists",
         "mostly": 0.99
@@ -171,7 +171,7 @@
       "type": "expect_column_values_to_not_be_null"
     },
     {
-      "id": "39609056-fbd6-407b-a97e-640cdcb30e3d",
+      "id": "160b38ad-84da-41c6-b88c-057ba0e1e583",
       "kwargs": {
         "column": "track_genre",
         "mostly": 0.99
@@ -185,7 +185,7 @@
       "type": "expect_column_values_to_not_be_null"
     },
     {
-      "id": "421e7d58-869c-41db-b3d5-48af1e70d2cc",
+      "id": "dab80bda-7b61-41df-9009-8e853c28f43f",
       "kwargs": {
         "column": "tempo",
         "min_value": 0.0,
@@ -201,222 +201,7 @@
       "type": "expect_column_values_to_be_between"
     },
     {
-      "id": "6d4baaa7-fca6-4688-8612-da079c434f49",
-      "kwargs": {
-        "column": "popularity",
-        "min_value": 1.0,
-        "mostly": 0.8
-      },
-      "meta": {
-        "layer": "raw",
-        "requirements": "R1,R4",
-        "rule_id": "DQ-S10"
-      },
-      "severity": "info",
-      "type": "expect_column_values_to_be_between"
-    },
-    {
-      "id": "0751e765-f306-416e-8600-25b1102e22eb",
-      "kwargs": {
-        "column_set": [
-          "track_id",
-          "artists",
-          "track_name",
-          "track_genre",
-          "popularity",
-          "danceability",
-          "energy",
-          "valence",
-          "acousticness",
-          "tempo"
-        ]
-      },
-      "meta": {
-        "layer": "raw",
-        "requirements": "R1-R4",
-        "rule_id": "DQ-S01"
-      },
-      "severity": "critical",
-      "type": "expect_table_columns_to_match_set"
-    },
-    {
-      "id": "c48c0f3c-1298-44f7-9f3e-62dc2105669e",
-      "kwargs": {
-        "min_value": 1
-      },
-      "meta": {
-        "layer": "raw",
-        "requirements": "R1-R4",
-        "rule_id": "DQ-S01"
-      },
-      "severity": "critical",
-      "type": "expect_table_row_count_to_be_between"
-    },
-    {
-      "id": "d4971dc2-eeef-4210-8bc4-c2325ca7571c",
-      "kwargs": {
-        "column": "track_id"
-      },
-      "meta": {
-        "layer": "raw",
-        "requirements": "R1-R4",
-        "rule_id": "DQ-S02"
-      },
-      "severity": "critical",
-      "type": "expect_column_values_to_not_be_null"
-    },
-    {
-      "id": "9667892e-581c-4a53-b199-ea2bdf6e8e7d",
-      "kwargs": {
-        "column_list": [
-          "track_id",
-          "track_genre"
-        ],
-        "mostly": 0.99
-      },
-      "meta": {
-        "layer": "raw",
-        "requirements": "R1-R4",
-        "rule_id": "DQ-S03"
-      },
-      "severity": "warning",
-      "type": "expect_compound_columns_to_be_unique"
-    },
-    {
-      "id": "57cd2fe1-f968-45cb-89c5-06f0622a6374",
-      "kwargs": {
-        "column": "popularity",
-        "max_value": 100.0,
-        "min_value": 0.0
-      },
-      "meta": {
-        "layer": "raw",
-        "requirements": "R1,R4",
-        "rule_id": "DQ-S04"
-      },
-      "severity": "critical",
-      "type": "expect_column_values_to_be_between"
-    },
-    {
-      "id": "54b844eb-804a-41fc-814b-78f9441f0042",
-      "kwargs": {
-        "column": "danceability",
-        "max_value": 1.0,
-        "min_value": 0.0
-      },
-      "meta": {
-        "layer": "raw",
-        "requirements": "R1",
-        "rule_id": "DQ-S05"
-      },
-      "severity": "critical",
-      "type": "expect_column_values_to_be_between"
-    },
-    {
-      "id": "43e98cb7-0f16-4c2a-bc09-b416a84b3585",
-      "kwargs": {
-        "column": "energy",
-        "max_value": 1.0,
-        "min_value": 0.0
-      },
-      "meta": {
-        "layer": "raw",
-        "requirements": "R1",
-        "rule_id": "DQ-S05"
-      },
-      "severity": "critical",
-      "type": "expect_column_values_to_be_between"
-    },
-    {
-      "id": "4e21f8ff-4acc-4827-b7c0-eca763286257",
-      "kwargs": {
-        "column": "valence",
-        "max_value": 1.0,
-        "min_value": 0.0
-      },
-      "meta": {
-        "layer": "raw",
-        "requirements": "R1",
-        "rule_id": "DQ-S05"
-      },
-      "severity": "critical",
-      "type": "expect_column_values_to_be_between"
-    },
-    {
-      "id": "8836a32b-1990-49c8-865f-141949e3a536",
-      "kwargs": {
-        "column": "acousticness",
-        "max_value": 1.0,
-        "min_value": 0.0
-      },
-      "meta": {
-        "layer": "raw",
-        "requirements": "R1",
-        "rule_id": "DQ-S05"
-      },
-      "severity": "critical",
-      "type": "expect_column_values_to_be_between"
-    },
-    {
-      "id": "8288a4ab-d90d-4917-bb4e-9c1f61a25dc5",
-      "kwargs": {
-        "column": "tempo",
-        "min_value": 0.0
-      },
-      "meta": {
-        "layer": "raw",
-        "requirements": "R1",
-        "rule_id": "DQ-S06"
-      },
-      "severity": "critical",
-      "type": "expect_column_values_to_be_between"
-    },
-    {
-      "id": "375f9b9b-9787-43b9-a749-d53c764ee44b",
-      "kwargs": {
-        "column": "artists",
-        "mostly": 0.99
-      },
-      "meta": {
-        "layer": "raw",
-        "requirements": "R1-R4",
-        "rule_id": "DQ-S07"
-      },
-      "severity": "warning",
-      "type": "expect_column_values_to_not_be_null"
-    },
-    {
-      "id": "237de27c-87e5-48ac-b51f-157665f8a6ff",
-      "kwargs": {
-        "column": "track_genre",
-        "mostly": 0.99
-      },
-      "meta": {
-        "layer": "raw",
-        "requirements": "R2",
-        "rule_id": "DQ-S08"
-      },
-      "severity": "warning",
-      "type": "expect_column_values_to_not_be_null"
-    },
-    {
-      "id": "a9c1895c-a362-4e8e-98ba-0062fa80855e",
-      "kwargs": {
-        "column": "tempo",
-        "min_value": 0.0,
-        "mostly": 0.99,
-        "strict_min": true
-      },
-      "meta": {
-        "layer": "raw",
-        "requirements": "R1",
-        "rule_id": "DQ-S09"
-      },
-      "severity": "info",
-      "type": "expect_column_values_to_be_between"
-    },
-    {
-      "id": "813dad7e-6e06-4951-9a1f-d0556492404d",
+      "id": "3e2524e8-0a0f-4c29-b727-c1e693ce3e08",
       "kwargs": {
         "column": "popularity",
         "min_value": 1.0,
