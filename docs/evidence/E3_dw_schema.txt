@@ -1,5 +1,5 @@
 # E3 - Esquema del DW (music_dw)
-# Generado: 2026-10-16T07:17:14Z
+# Generado: 2026-10-16T07:23:08Z
               List of relations
  Schema |        Name        | Type  | Owner 
 --------+--------------------+-------+-------
@@ -11,5 +11,39 @@
  public | dim_year           | table | admin
  public | fact_award         | table | admin
  public | fact_track_artist  | table | admin
+(8 rows)
+
+                             Table "public.fact_track_artist"
+      Column      |       Type       | Collation | Nullable |           Default            
+------------------+------------------+-----------+----------+------------------------------
+ track_artist_key | bigint           |           | not null | generated always as identity
+ track_key        | integer          |           | not null | 
+ artist_key       | integer          |           | not null | 
+ popularity       | smallint         |           | not null | 
+ danceability     | double precision |           |          | 
+ energy           | double precision |           | not null | 
+ valence          | double precision |           |          | 
+ acousticness     | double precision |           | not null | 
+ tempo            | numeric(7,3)     |           |          | 
+ n_artists        | smallint         |           | not null | 
+ is_collaboration | boolean          |           | not null | 
+Indexes:
+    "pk_fact_track_artist" PRIMARY KEY, btree (track_artist_key)
+    "ix_fact_track_artist_artist" btree (artist_key)
+    "uq_fact_track_artist_grain" UNIQUE CONSTRAINT, btree (track_key, artist_key)
+Foreign-key constraints:
+    "fk_fta_artist" FOREIGN KEY (artist_key) REFERENCES dim_artist(artist_key)
+    "fk_fta_track" FOREIGN KEY (track_key) REFERENCES dim_track(track_key)
+
+       tabla        | lee | inserta | actualiza | borra | trunca 
+--------------------+-----+---------+-----------+-------+--------
+ bridge_track_genre | t   | t       | t         | t     | t
+ dim_artist         | t   | t       | t         | t     | t
+ dim_category       | t   | t       | t         | t     | t
+ dim_genre          | t   | t       | t         | t     | t
+ dim_track          | t   | t       | t         | t     | t
+ dim_year           | t   | t       | t         | t     | t
+ fact_award         | t   | t       | t         | t     | t
+ fact_track_artist  | t   | t       | t         | t     | t
 (8 rows)
 
