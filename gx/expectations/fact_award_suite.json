@@ -1,7 +1,7 @@
 {
   "expectations": [
     {
-      "id": "a6386912-de53-4666-8935-94f44b8768dc",
+      "id": "b37e7137-9b64-4ecf-b219-30a972887ffe",
       "kwargs": {
         "column_set": [
           "year",
@@ -20,7 +20,7 @@
       "type": "expect_table_columns_to_match_set"
     },
     {
-      "id": "9135d513-100e-4659-94ce-4755c86da465",
+      "id": "00c58a2e-d280-4527-92ec-4db7b2f39300",
       "kwargs": {
         "min_value": 1
       },
@@ -33,7 +33,7 @@
       "type": "expect_table_row_count_to_be_between"
     },
     {
-      "id": "3a92cd8a-9468-4fef-b1ac-5b5247ab9c69",
+      "id": "5ff884d4-f800-4385-b6d0-44faa068931b",
       "kwargs": {
         "column_list": [
           "year",
@@ -51,7 +51,7 @@
       "type": "expect_compound_columns_to_be_unique"
     },
     {
-      "id": "85646b3f-7c33-4bfb-9614-991b56af480d",
+      "id": "a2f62317-1499-4ab6-9c97-ad67de9c26d8",
       "kwargs": {
         "column": "year",
         "max_value": 2018.0,

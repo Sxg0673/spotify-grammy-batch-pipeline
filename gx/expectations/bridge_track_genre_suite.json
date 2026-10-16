@@ -1,7 +1,7 @@
 {
   "expectations": [
     {
-      "id": "75f3f17d-9f8e-426b-85ff-5648937bbcf8",
+      "id": "42855c2f-dbba-4b38-9789-a8cbfb78c27c",
       "kwargs": {
         "column_set": [
           "track_id",
@@ -17,7 +17,7 @@
       "type": "expect_table_columns_to_match_set"
     },
     {
-      "id": "db8baa0c-3bbd-4b10-96b4-4135ec89f462",
+      "id": "babce621-979d-4332-bc91-62fc99cba2bb",
       "kwargs": {
         "min_value": 1
       },
@@ -30,7 +30,7 @@
       "type": "expect_table_row_count_to_be_between"
     },
     {
-      "id": "3dc0889f-3f8f-45a9-8a63-320f2038fb0e",
+      "id": "797dd600-2079-4646-b93c-63d709137470",
       "kwargs": {
         "column_list": [
           "track_id",

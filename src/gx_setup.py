@@ -10,6 +10,7 @@ Uso, dentro del contenedor:
     python -m src.gx_setup > docs/gx_expectation_map.md
 El inventario se imprime por stderr y el mapa expectativa -> Rule ID por stdout.
 """
+import json
 import sys
 from pathlib import Path
 
@@ -150,6 +151,19 @@ def get_data_source(ctx):
         return ctx.data_sources.add_pandas(name=DATA_SOURCE_NAME)
 
 
+def _signature(suite):
+    """Configuración de las expectativas sin sus identificadores (GX los regenera al guardar)."""
+    firmas = []
+    for expectation in suite.expectations:
+        try:
+            config = expectation.configuration.to_json_dict()
+        except AttributeError:
+            config = expectation.model_dump(mode="json")
+        config.pop("id", None)
+        firmas.append(json.dumps(config, sort_keys=True, default=str))
+    return firmas
+
+
 def register(ctx, data_source, asset_name, expectations, with_checkpoint):
     # Data Asset y Batch Definition (DataFrame completo, como en clase)
     try:
@@ -163,10 +177,18 @@ def register(ctx, data_source, asset_name, expectations, with_checkpoint):
         batch_definition = asset.add_batch_definition_whole_dataframe(batch_name)
 
     # Expectation Suite
-    suite = gx.ExpectationSuite(name=f"{asset_name}_suite")
+    new_suite = gx.ExpectationSuite(name=f"{asset_name}_suite")
     for expectation in expectations:
-        suite.add_expectation(expectation)
-    suite = upsert(ctx.suites, suite)
+        new_suite.add_expectation(expectation)
+    try:
+        existing = ctx.suites.get(new_suite.name)
+    except Exception:
+        existing = None
+    if existing is not None and _signature(existing) == _signature(new_suite):
+        suite, status = existing, "sin cambios"
+    else:
+        suite = upsert(ctx.suites, new_suite)
+        status = "actualizada" if existing is not None else "creada"
 
     # Validation Definition
     validation_definition = upsert(
@@ -174,7 +196,7 @@ def register(ctx, data_source, asset_name, expectations, with_checkpoint):
         gx.ValidationDefinition(name=f"{asset_name}_validation_definition", data=batch_definition, suite=suite),
     )
 
-    message = f"{asset_name}: suite con {len(suite.expectations)} expectativas y validation definition registradas"
+    message = f"{asset_name}: suite {status} ({len(suite.expectations)} expectativas), validation definition registrada"
 
     # Checkpoint (solo compuertas raw; ver docs/gx_design.md, sección 2)
     if with_checkpoint:
