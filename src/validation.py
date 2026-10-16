@@ -201,7 +201,7 @@ def run_prepared_gate(run_id, prepared_dir):
 
     summary_path = _write_evidence(run_id, gate, results, rows, max_severity, action, rows_validated)
     _print_summary(gate, rows, max_severity, action)
-    print(f"[validation] chequeos derivados: {checks.iloc[0].to_dict()}")
+    print(f"[validation] chequeos derivados: {checks.to_dict(orient="records")[0]}")
     _enforce(gate, rows, max_severity, summary_path)
 
     return {"gate": gate, "action": action,

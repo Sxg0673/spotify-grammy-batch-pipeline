@@ -19,3 +19,8 @@ class CriticalQualityError(Exception):
 class TransformContractError(Exception):
     """Un supuesto de la transformación sobre la fuente dejó de cumplirse (p. ej. S3: un
     atributo distinto de género y popularidad varía dentro de un track_id). Determinista."""
+
+
+class LoadIntegrityError(Exception):
+    """La carga encontró una llave sin su dimensión o un conteo que no coincide.
+    Determinista: la transacción se deshace y el DW conserva la carga anterior."""
