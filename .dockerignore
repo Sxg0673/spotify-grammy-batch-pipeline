@@ -1,0 +1,8 @@
+.venv/
+.git/
+data/
+logs/
+notebooks/
+docs/
+*.ipynb
+.env
