@@ -5,6 +5,8 @@ el equivalente en base de datos al "sobrescribir" de la Activity 3):
 - Un rerun con la misma entrada deja el DW idéntico, sin duplicados.
 - Si algo falla a mitad de la carga, la transacción se deshace y el DW conserva la carga anterior.
 Las dimensiones se cargan primero; los hechos traducen llaves de negocio a llaves sustitutas.
+Las llaves sustitutas NO se reinician: etl_user no es dueño de las secuencias (mínimo privilegio).
+Cada recarga asigna llaves nuevas; conteos, medidas y relaciones quedan idénticos.
 """
 import json
 import os
@@ -88,7 +90,7 @@ def run_load(run_id, prepared_dir):
     try:
         with conn:  # psycopg2: confirma al salir sin error; deshace ante cualquier excepción
             with conn.cursor() as cur:
-                cur.execute(f"TRUNCATE {', '.join(ALL_TABLES)} RESTART IDENTITY")
+                cur.execute(f"TRUNCATE {', '.join(ALL_TABLES)}")
 
                 keys = {}
                 for table, columns, business_key, surrogate_key in DIMENSIONS:
