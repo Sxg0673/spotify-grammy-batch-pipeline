@@ -175,3 +175,6 @@ fluent_datasources:
             partitioner:
 analytics_enabled:
 data_context_id: 9c0afd00-6bf3-468a-9b7a-660a816a922c
+progress_bars:
+  globally: false
+  metric_calculations: false
