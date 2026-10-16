@@ -1,0 +1,15 @@
+# E2 - Preparación de la fuente Grammy (grammy_source.grammy_awards)
+# Generado: 2026-10-16T06:45:20Z
+# sha256 del CSV: bae3d6613cb39adb597bb8864fb294144bd55cb452557536f324020266727d88
+ filas | artist_nulos | min  | max  | ganadores 
+-------+--------------+------+------+-----------
+  4810 |         1840 | 1958 | 2019 |      4810
+(1 row)
+
+                                  Access privileges
+ Schema |     Name      | Type  |  Access privileges  | Column privileges | Policies 
+--------+---------------+-------+---------------------+-------------------+----------
+ public | grammy_awards | table | admin=arwdDxt/admin+|                   | 
+        |               |       | etl_user=r/admin    |                   | 
+(1 row)
+
