@@ -26,6 +26,8 @@ DEFAULT_SPOTIFY_PATH = DATA_DIR / "raw" / "spotify_dataset.csv"
 DEFAULT_GRAMMY_TABLE = "grammy_awards"
 
 RAW_DTYPES = {"spotify": s.SPOTIFY_RAW_DTYPES, "grammy": s.GRAMMY_RAW_DTYPES}
+# Solo el campo vacío es nulo: evita que textos como "NA", "null" o "None" se pierdan en silencio
+NA_KW = {"keep_default_na": False, "na_values": [""]}
 
 
 # ---------------------------------------------------------
@@ -84,7 +86,7 @@ def extract_spotify(run_id, source_path=DEFAULT_SPOTIFY_PATH):
     _check_columns(header, s.SPOTIFY_RAW_COLUMNS, f"Spotify ({source_path.name})")
 
     try:
-        df = pd.read_csv(source_path, usecols=s.SPOTIFY_RAW_COLUMNS, dtype=s.SPOTIFY_RAW_DTYPES)
+        df = pd.read_csv(source_path, usecols=s.SPOTIFY_RAW_COLUMNS, dtype=s.SPOTIFY_RAW_DTYPES, **NA_KW)
     except (ValueError, TypeError) as exc:
         raise SourceContractError(f"Spotify ({source_path.name}): un valor no coincide con su tipo declarado: {exc}") from exc
 
@@ -141,4 +143,4 @@ def extract_grammys(run_id, table=DEFAULT_GRAMMY_TABLE):
 # ---------------------------------------------------------
 
 def read_raw(path, source):
-    return pd.read_csv(path, dtype=RAW_DTYPES[source])
+    return pd.read_csv(path, dtype=RAW_DTYPES[source], **NA_KW)

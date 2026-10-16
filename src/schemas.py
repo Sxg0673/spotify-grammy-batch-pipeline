@@ -92,3 +92,22 @@ GRAMMY_RAW_DTYPES = {
     "year": "Int64", "category": "object", "nominee": "object", "artist": "object",
     "winner": "boolean",
 }
+
+# ---------------------------------------------------------
+# Tipos de los archivos preparados (T1); coinciden con el DDL del DW
+# ---------------------------------------------------------
+PREPARED_DTYPES = {
+    "dim_artist": {"artist_bk": "object", "artist_name": "object", "is_awarded": "boolean"},
+    "dim_year": {"year": "Int64", "decade": "Int64"},
+    "dim_category": {"category_bk": "object", "category_name": "object", "is_new_artist": "boolean"},
+    "dim_genre": {"genre_name": "object"},
+    "dim_track": {"track_id": "object", "track_name": "object", "song_bk": "object",
+                  "is_song_representative": "boolean", "audio_analyzed": "boolean"},
+    "bridge_track_genre": {"track_id": "object", "genre_name": "object"},
+    "fact_award": {"year": "Int64", "category_bk": "object", "nominee": "object",
+                   "artist_bk": "object", "award_count": "Int64"},
+    "fact_track_artist": {"track_id": "object", "artist_bk": "object", "popularity": "Int64",
+                          "danceability": "float64", "energy": "float64", "valence": "float64",
+                          "acousticness": "float64", "tempo": "float64",
+                          "n_artists": "Int64", "is_collaboration": "boolean"},
+}
