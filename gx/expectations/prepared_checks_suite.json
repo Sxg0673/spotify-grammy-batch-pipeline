@@ -1,0 +1,215 @@
+{
+  "expectations": [
+    {
+      "id": "acef48c5-9832-466e-94f2-5cd2c99607ef",
+      "kwargs": {
+        "column_set": [
+          "orphans_fact_award_year",
+          "orphans_fact_award_category",
+          "orphans_fact_award_artist",
+          "orphans_fact_track_artist_track",
+          "orphans_fact_track_artist_artist",
+          "orphans_bridge_track",
+          "orphans_bridge_genre",
+          "audio_partial_nulls",
+          "collaboration_mismatches",
+          "songs_without_single_representative",
+          "awarded_mismatches",
+          "match_rate"
+        ]
+      },
+      "meta": {
+        "layer": "prepared",
+        "requirements": "R1-R4",
+        "rule_id": "DQ-P01"
+      },
+      "severity": "critical",
+      "type": "expect_table_columns_to_match_set"
+    },
+    {
+      "id": "45e7974a-6d95-47f4-8ade-0629600d4bd7",
+      "kwargs": {
+        "column": "orphans_fact_award_year",
+        "max_value": 0.0,
+        "min_value": 0.0
+      },
+      "meta": {
+        "layer": "prepared",
+        "requirements": "R1-R4",
+        "rule_id": "DQ-P04"
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_be_between"
+    },
+    {
+      "id": "56304788-1944-4178-9444-694d23c7e038",
+      "kwargs": {
+        "column": "orphans_fact_award_category",
+        "max_value": 0.0,
+        "min_value": 0.0
+      },
+      "meta": {
+        "layer": "prepared",
+        "requirements": "R1-R4",
+        "rule_id": "DQ-P04"
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_be_between"
+    },
+    {
+      "id": "e8a39e5c-8ae0-4a74-8d2b-4b0173ed1db7",
+      "kwargs": {
+        "column": "orphans_fact_award_artist",
+        "max_value": 0.0,
+        "min_value": 0.0
+      },
+      "meta": {
+        "layer": "prepared",
+        "requirements": "R1-R4",
+        "rule_id": "DQ-P04"
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_be_between"
+    },
+    {
+      "id": "8ff33c9e-5f04-48fd-879a-6d22474aaa87",
+      "kwargs": {
+        "column": "orphans_fact_track_artist_track",
+        "max_value": 0.0,
+        "min_value": 0.0
+      },
+      "meta": {
+        "layer": "prepared",
+        "requirements": "R1-R4",
+        "rule_id": "DQ-P04"
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_be_between"
+    },
+    {
+      "id": "36ccee56-1bd5-4741-8bdf-54f4fe082890",
+      "kwargs": {
+        "column": "orphans_fact_track_artist_artist",
+        "max_value": 0.0,
+        "min_value": 0.0
+      },
+      "meta": {
+        "layer": "prepared",
+        "requirements": "R1-R4",
+        "rule_id": "DQ-P04"
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_be_between"
+    },
+    {
+      "id": "c018a608-5374-4122-858d-ea6705469a0c",
+      "kwargs": {
+        "column": "orphans_bridge_track",
+        "max_value": 0.0,
+        "min_value": 0.0
+      },
+      "meta": {
+        "layer": "prepared",
+        "requirements": "R1-R4",
+        "rule_id": "DQ-P04"
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_be_between"
+    },
+    {
+      "id": "fae18a44-8e99-415b-96aa-893cd0bdd3ea",
+      "kwargs": {
+        "column": "orphans_bridge_genre",
+        "max_value": 0.0,
+        "min_value": 0.0
+      },
+      "meta": {
+        "layer": "prepared",
+        "requirements": "R1-R4",
+        "rule_id": "DQ-P04"
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_be_between"
+    },
+    {
+      "id": "a450fba4-171b-4480-b621-47002be0756e",
+      "kwargs": {
+        "column": "audio_partial_nulls",
+        "max_value": 0.0,
+        "min_value": 0.0
+      },
+      "meta": {
+        "layer": "prepared",
+        "requirements": "R1",
+        "rule_id": "DQ-P07"
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_be_between"
+    },
+    {
+      "id": "27b8db1a-3bcd-46e0-8815-bcd8cdc3032b",
+      "kwargs": {
+        "column": "collaboration_mismatches",
+        "max_value": 0.0,
+        "min_value": 0.0
+      },
+      "meta": {
+        "layer": "prepared",
+        "requirements": "R3",
+        "rule_id": "DQ-P08"
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_be_between"
+    },
+    {
+      "id": "ad1b20b7-0312-4625-85c1-be136ed26632",
+      "kwargs": {
+        "column": "songs_without_single_representative",
+        "max_value": 0.0,
+        "min_value": 0.0
+      },
+      "meta": {
+        "layer": "prepared",
+        "requirements": "R1,R3,R4",
+        "rule_id": "DQ-P09"
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_be_between"
+    },
+    {
+      "id": "e696ccaa-37ef-4c89-ade5-7c6fac12fc0a",
+      "kwargs": {
+        "column": "awarded_mismatches",
+        "max_value": 0.0,
+        "min_value": 0.0
+      },
+      "meta": {
+        "layer": "prepared",
+        "requirements": "R1-R4",
+        "rule_id": "DQ-P10"
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_be_between"
+    },
+    {
+      "id": "14bbb194-a12d-48e4-baa2-df84de5ed423",
+      "kwargs": {
+        "column": "match_rate",
+        "min_value": 0.4
+      },
+      "meta": {
+        "layer": "prepared",
+        "requirements": "R1-R4",
+        "rule_id": "DQ-P11"
+      },
+      "severity": "warning",
+      "type": "expect_column_values_to_be_between"
+    }
+  ],
+  "id": "0387926c-ab8e-498f-b51d-06ca1601595a",
+  "meta": {
+    "great_expectations_version": "1.23.2"
+  },
+  "name": "prepared_checks_suite",
+  "notes": null
+}

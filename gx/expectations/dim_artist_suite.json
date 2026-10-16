@@ -1,0 +1,66 @@
+{
+  "expectations": [
+    {
+      "id": "b388f1f3-2435-4eb5-8248-ed48f974b4f3",
+      "kwargs": {
+        "column_set": [
+          "artist_bk",
+          "artist_name",
+          "is_awarded"
+        ]
+      },
+      "meta": {
+        "layer": "prepared",
+        "requirements": "R1-R4",
+        "rule_id": "DQ-P01"
+      },
+      "severity": "critical",
+      "type": "expect_table_columns_to_match_set"
+    },
+    {
+      "id": "020fb211-9289-4cea-822a-09974f8193d8",
+      "kwargs": {
+        "min_value": 1
+      },
+      "meta": {
+        "layer": "prepared",
+        "requirements": "R1-R4",
+        "rule_id": "DQ-P01"
+      },
+      "severity": "critical",
+      "type": "expect_table_row_count_to_be_between"
+    },
+    {
+      "id": "38b50d3a-15be-461c-a9cf-6e3d9fb2ed10",
+      "kwargs": {
+        "column": "artist_bk"
+      },
+      "meta": {
+        "layer": "prepared",
+        "requirements": "R1-R4",
+        "rule_id": "DQ-P02"
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "66424e4c-cf22-48d6-a21f-ebeacd417698",
+      "kwargs": {
+        "column": "artist_bk"
+      },
+      "meta": {
+        "layer": "prepared",
+        "requirements": "R1-R4",
+        "rule_id": "DQ-P02"
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_be_unique"
+    }
+  ],
+  "id": "02577d14-dd4d-42e3-9963-529cd4e7b50e",
+  "meta": {
+    "great_expectations_version": "1.23.2"
+  },
+  "name": "dim_artist_suite",
+  "notes": null
+}

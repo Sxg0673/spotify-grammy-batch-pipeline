@@ -1,0 +1,22 @@
+{
+  "data": {
+    "asset": {
+      "id": "49ddf7eb-6639-4605-8844-2444d4aca29e",
+      "name": "dim_category"
+    },
+    "batch_definition": {
+      "id": "d7d46b71-071e-4df4-bbb8-dfbd8b356278",
+      "name": "dim_category_batch"
+    },
+    "datasource": {
+      "id": "b5720da9-ce00-46e3-ba4a-44023ef248c2",
+      "name": "music_pandas_source"
+    }
+  },
+  "id": "9f8735d8-d38b-4e15-9f9c-7d694c394ac2",
+  "name": "dim_category_validation_definition",
+  "suite": {
+    "id": "8511f424-b9e8-412a-8f4a-a63759acb8b0",
+    "name": "dim_category_suite"
+  }
+}

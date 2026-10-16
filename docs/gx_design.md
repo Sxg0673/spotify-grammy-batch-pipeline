@@ -15,12 +15,12 @@ Patrón base: el de la práctica de clase (Activity 3 y `candidate_validation.py
 
 ## 2. Objetos
 
-Data source único: `pandas_src`. Cada dataset tiene asset, batch definition (`<asset>_batch`), suite (`<asset>_suite`) y Validation Definition (`<asset>_vd`).
+Data source único: `music_pandas_source`. Cada dataset tiene asset, batch definition (`<asset>_batch`), suite (`<asset>_suite`) y Validation Definition (`<asset>_validation_definition`).
 
 | Compuerta | Asset | Origen del DataFrame | Ejecución |
 |---|---|---|---|
-| Raw Spotify | `spotify_raw` | `data/work/<run_id>/raw/spotify_raw.csv` leído con tipos declarados | Checkpoint `spotify_raw_cp` |
-| Raw Grammy | `grammy_raw` | `data/work/<run_id>/raw/grammy_raw.csv` leído con tipos declarados | Checkpoint `grammy_raw_cp` |
+| Raw Spotify | `spotify_raw` | `data/work/<run_id>/raw/spotify_raw.csv` leído con tipos declarados | Checkpoint `spotify_raw_checkpoint` |
+| Raw Grammy | `grammy_raw` | `data/work/<run_id>/raw/grammy_raw.csv` leído con tipos declarados | Checkpoint `grammy_raw_checkpoint` |
 | Preparada | `dim_artist`, `dim_year`, `dim_category`, `dim_genre`, `dim_track`, `bridge_track_genre`, `fact_award`, `fact_track_artist` | Archivos de `data/work/<run_id>/prepared/` | `vd.run(...)` por tabla |
 | Preparada | `prepared_checks` | DataFrame de una fila con métricas derivadas (ver sección 4) | `vd.run(...)` |
 
@@ -98,7 +98,7 @@ GX Core valida un DataFrame a la vez. Las reglas que cruzan filas o tablas se ca
 ## 5. Resultados y evidencia
 
 Por cada validación, en `data/work/<run_id>/validation/`:
-- `<vd>.json`: resultado completo de GX (`to_json_dict()`).
+- `<validation_definition>.json`: resultado completo de GX (`to_json_dict()`).
 - `<compuerta>_summary.json`: por expectativa, `rule_id`, tipo, columna, severidad, éxito, `unexpected_count` y `unexpected_percent`; más la máxima severidad fallida y la acción tomada.
 
 El log de la tarea imprime el mismo resumen, como en la práctica de clase. Las corridas de las pruebas A y B se copian a `docs/evidence/`.

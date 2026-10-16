@@ -1,0 +1,66 @@
+{
+  "expectations": [
+    {
+      "id": "bf81ac30-3894-4cf7-be08-c97b4e8183ef",
+      "kwargs": {
+        "column_set": [
+          "category_bk",
+          "category_name",
+          "is_new_artist"
+        ]
+      },
+      "meta": {
+        "layer": "prepared",
+        "requirements": "R1-R4",
+        "rule_id": "DQ-P01"
+      },
+      "severity": "critical",
+      "type": "expect_table_columns_to_match_set"
+    },
+    {
+      "id": "de8d1799-558f-4d31-a904-5a883b9d97d4",
+      "kwargs": {
+        "min_value": 1
+      },
+      "meta": {
+        "layer": "prepared",
+        "requirements": "R1-R4",
+        "rule_id": "DQ-P01"
+      },
+      "severity": "critical",
+      "type": "expect_table_row_count_to_be_between"
+    },
+    {
+      "id": "9e2d9723-bbf4-4cfb-9e8a-315f8bc3b83b",
+      "kwargs": {
+        "column": "category_bk"
+      },
+      "meta": {
+        "layer": "prepared",
+        "requirements": "R1-R4",
+        "rule_id": "DQ-P02"
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "5817e8e5-62a3-4af5-8bd9-2db885303efe",
+      "kwargs": {
+        "column": "category_bk"
+      },
+      "meta": {
+        "layer": "prepared",
+        "requirements": "R1-R4",
+        "rule_id": "DQ-P02"
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_be_unique"
+    }
+  ],
+  "id": "8511f424-b9e8-412a-8f4a-a63759acb8b0",
+  "meta": {
+    "great_expectations_version": "1.23.2"
+  },
+  "name": "dim_category_suite",
+  "notes": null
+}

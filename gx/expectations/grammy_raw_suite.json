@@ -1,0 +1,174 @@
+{
+  "expectations": [
+    {
+      "id": "690a3115-6349-4e5c-b70a-f6ee3b214dd3",
+      "kwargs": {
+        "column_set": [
+          "year",
+          "category",
+          "nominee",
+          "artist",
+          "winner"
+        ]
+      },
+      "meta": {
+        "layer": "raw",
+        "requirements": "R1-R4",
+        "rule_id": "DQ-G01"
+      },
+      "severity": "critical",
+      "type": "expect_table_columns_to_match_set"
+    },
+    {
+      "id": "4a93c858-f4e5-41ef-8de2-76e59572f143",
+      "kwargs": {
+        "min_value": 1
+      },
+      "meta": {
+        "layer": "raw",
+        "requirements": "R1-R4",
+        "rule_id": "DQ-G01"
+      },
+      "severity": "critical",
+      "type": "expect_table_row_count_to_be_between"
+    },
+    {
+      "id": "b58460c7-495d-4eed-8b9a-49554e6e6652",
+      "kwargs": {
+        "column": "year"
+      },
+      "meta": {
+        "layer": "raw",
+        "requirements": "R1,R3",
+        "rule_id": "DQ-G02"
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "a4060d42-5fab-4f8f-b6a0-eb29a0b3cc45",
+      "kwargs": {
+        "column": "year",
+        "max_value": 2019.0,
+        "min_value": 1958.0
+      },
+      "meta": {
+        "layer": "raw",
+        "requirements": "R1,R3",
+        "rule_id": "DQ-G02"
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_be_between"
+    },
+    {
+      "id": "fe2d3bb5-f59b-43fa-a672-6138f54fe6c8",
+      "kwargs": {
+        "column": "category"
+      },
+      "meta": {
+        "layer": "raw",
+        "requirements": "R1-R4",
+        "rule_id": "DQ-G03"
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "ea33549b-525e-4201-837f-f515b1bac398",
+      "kwargs": {
+        "column": "winner"
+      },
+      "meta": {
+        "layer": "raw",
+        "requirements": "R1,R3,R4",
+        "rule_id": "DQ-G04"
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "b8810fd9-2136-4bf2-962b-32c0c82049ae",
+      "kwargs": {
+        "column": "winner",
+        "value_set": [
+          true
+        ]
+      },
+      "meta": {
+        "layer": "raw",
+        "requirements": "R1,R3,R4",
+        "rule_id": "DQ-G04"
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_be_in_set"
+    },
+    {
+      "id": "fa69928a-158b-40b1-a2c7-6e459eeced2b",
+      "kwargs": {
+        "column_list": [
+          "year",
+          "category",
+          "nominee"
+        ]
+      },
+      "meta": {
+        "layer": "raw",
+        "requirements": "R4",
+        "rule_id": "DQ-G05"
+      },
+      "severity": "critical",
+      "type": "expect_compound_columns_to_be_unique"
+    },
+    {
+      "id": "b9e60889-2ec3-4f6f-b308-1b1c0b0626cd",
+      "kwargs": {
+        "column_list": [
+          "year",
+          "category"
+        ],
+        "mostly": 0.95
+      },
+      "meta": {
+        "layer": "raw",
+        "requirements": "R1,R3,R4",
+        "rule_id": "DQ-G06"
+      },
+      "severity": "warning",
+      "type": "expect_compound_columns_to_be_unique"
+    },
+    {
+      "id": "aa675cc5-5771-4e0e-ab97-e8e9b5329572",
+      "kwargs": {
+        "column": "artist",
+        "mostly": 0.5
+      },
+      "meta": {
+        "layer": "raw",
+        "requirements": "R1-R4",
+        "rule_id": "DQ-G07"
+      },
+      "severity": "warning",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "22760e27-3c30-46cc-b664-cfcd1fc16350",
+      "kwargs": {
+        "column": "nominee",
+        "mostly": 0.99
+      },
+      "meta": {
+        "layer": "raw",
+        "requirements": "R1,R3,R4",
+        "rule_id": "DQ-G08"
+      },
+      "severity": "warning",
+      "type": "expect_column_values_to_not_be_null"
+    }
+  ],
+  "id": "84cd7069-90fa-490f-9ba8-d6f9d15250e8",
+  "meta": {
+    "great_expectations_version": "1.23.2"
+  },
+  "name": "grammy_raw_suite",
+  "notes": null
+}

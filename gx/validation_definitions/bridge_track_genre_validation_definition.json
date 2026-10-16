@@ -1,0 +1,22 @@
+{
+  "data": {
+    "asset": {
+      "id": "f3c38380-7981-4fa0-a17b-213418238d7b",
+      "name": "bridge_track_genre"
+    },
+    "batch_definition": {
+      "id": "51980baa-914b-4def-8c56-ca572a508a44",
+      "name": "bridge_track_genre_batch"
+    },
+    "datasource": {
+      "id": "b5720da9-ce00-46e3-ba4a-44023ef248c2",
+      "name": "music_pandas_source"
+    }
+  },
+  "id": "83c16511-66a1-4266-82e7-b4722750b209",
+  "name": "bridge_track_genre_validation_definition",
+  "suite": {
+    "id": "1311ce68-07fd-444e-9973-437fb8a6cb14",
+    "name": "bridge_track_genre_suite"
+  }
+}

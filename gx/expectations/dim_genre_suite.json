@@ -1,0 +1,64 @@
+{
+  "expectations": [
+    {
+      "id": "8fe086a8-1702-4b4c-98e0-cf58729d71e0",
+      "kwargs": {
+        "column_set": [
+          "genre_name"
+        ]
+      },
+      "meta": {
+        "layer": "prepared",
+        "requirements": "R1-R4",
+        "rule_id": "DQ-P01"
+      },
+      "severity": "critical",
+      "type": "expect_table_columns_to_match_set"
+    },
+    {
+      "id": "c97515eb-9476-4c76-8190-7a129557a202",
+      "kwargs": {
+        "min_value": 1
+      },
+      "meta": {
+        "layer": "prepared",
+        "requirements": "R1-R4",
+        "rule_id": "DQ-P01"
+      },
+      "severity": "critical",
+      "type": "expect_table_row_count_to_be_between"
+    },
+    {
+      "id": "32591434-c8fa-4dcc-bfc7-7f66f70e11aa",
+      "kwargs": {
+        "column": "genre_name"
+      },
+      "meta": {
+        "layer": "prepared",
+        "requirements": "R1-R4",
+        "rule_id": "DQ-P02"
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "3651c65d-64a9-4f42-a390-19dc81d6e1d5",
+      "kwargs": {
+        "column": "genre_name"
+      },
+      "meta": {
+        "layer": "prepared",
+        "requirements": "R1-R4",
+        "rule_id": "DQ-P02"
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_be_unique"
+    }
+  ],
+  "id": "f4d3b170-16ca-48ad-9d02-1c0d62c69017",
+  "meta": {
+    "great_expectations_version": "1.23.2"
+  },
+  "name": "dim_genre_suite",
+  "notes": null
+}

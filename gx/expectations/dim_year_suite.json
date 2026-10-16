@@ -1,0 +1,102 @@
+{
+  "expectations": [
+    {
+      "id": "393062c2-4294-419e-a002-0612d8a36bec",
+      "kwargs": {
+        "column_set": [
+          "year",
+          "decade"
+        ]
+      },
+      "meta": {
+        "layer": "prepared",
+        "requirements": "R1-R4",
+        "rule_id": "DQ-P01"
+      },
+      "severity": "critical",
+      "type": "expect_table_columns_to_match_set"
+    },
+    {
+      "id": "82d81b86-43d4-435d-8e57-4f93b86b2fe3",
+      "kwargs": {
+        "min_value": 1
+      },
+      "meta": {
+        "layer": "prepared",
+        "requirements": "R1-R4",
+        "rule_id": "DQ-P01"
+      },
+      "severity": "critical",
+      "type": "expect_table_row_count_to_be_between"
+    },
+    {
+      "id": "bcd0c326-25b8-4618-bddb-58902f337a27",
+      "kwargs": {
+        "column": "year"
+      },
+      "meta": {
+        "layer": "prepared",
+        "requirements": "R1-R4",
+        "rule_id": "DQ-P02"
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "b9ddd013-b3f1-4c74-97fa-4c26c2d5d8c2",
+      "kwargs": {
+        "column": "year"
+      },
+      "meta": {
+        "layer": "prepared",
+        "requirements": "R1-R4",
+        "rule_id": "DQ-P02"
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_be_unique"
+    },
+    {
+      "id": "4f285428-717b-45ef-92b4-e00dbcdf432b",
+      "kwargs": {
+        "column": "year",
+        "max_value": 2018.0,
+        "min_value": 1958.0
+      },
+      "meta": {
+        "layer": "prepared",
+        "requirements": "R1,R3",
+        "rule_id": "DQ-P05"
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_be_between"
+    },
+    {
+      "id": "054b1148-2ef1-418c-8ce1-ea30ed297ac0",
+      "kwargs": {
+        "column": "decade",
+        "value_set": [
+          1950,
+          1960,
+          1970,
+          1980,
+          1990,
+          2000,
+          2010
+        ]
+      },
+      "meta": {
+        "layer": "prepared",
+        "requirements": "R1,R3",
+        "rule_id": "DQ-P05"
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_be_in_set"
+    }
+  ],
+  "id": "eb6b713b-ed2c-442a-8217-92b313af1630",
+  "meta": {
+    "great_expectations_version": "1.23.2"
+  },
+  "name": "dim_year_suite",
+  "notes": null
+}
