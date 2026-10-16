@@ -6,6 +6,7 @@ La evidencia se guarda siempre ANTES de aplicar la política, para que una corri
 deje su resultado (docs/gx_design.md).
 """
 import json
+import logging
 from pathlib import Path
 
 import pandas as pd
@@ -20,6 +21,9 @@ from src import schemas as s
 from src.transform import read_prepared
 
 RESULT_FORMAT = {"result_format": "SUMMARY"}
+
+# Los mensajes INFO de GX ocultan el resumen de la compuerta en el log de Airflow
+logging.getLogger("great_expectations").setLevel(logging.WARNING)
 
 # Política de severidad (docs/gx_design.md, sección 3); etiquetas de la práctica de clase
 ACTIONS = {
