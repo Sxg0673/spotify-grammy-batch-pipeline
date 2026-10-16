@@ -161,7 +161,7 @@ def _signature(suite):
             config = expectation.model_dump(mode="json")
         config.pop("id", None)
         firmas.append(json.dumps(config, sort_keys=True, default=str))
-    return firmas
+    return sorted(firmas)  # el orden de guardado de GX no es el de definición
 
 
 def register(ctx, data_source, asset_name, expectations, with_checkpoint):

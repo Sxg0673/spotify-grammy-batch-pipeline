@@ -1,7 +1,7 @@
 {
   "expectations": [
     {
-      "id": "1db0b422-ab2e-4f8b-a443-2869ab0ef5af",
+      "id": "b965ba4f-85aa-442d-a398-9c0b47c590bf",
       "kwargs": {
         "column_set": [
           "year",
@@ -20,7 +20,7 @@
       "type": "expect_table_columns_to_match_set"
     },
     {
-      "id": "dd31d892-b50d-44c0-adc0-7a6cfc53a87a",
+      "id": "66fa5aab-392d-4b71-9551-b8ce7c35fa29",
       "kwargs": {
         "min_value": 1
       },
@@ -33,7 +33,7 @@
       "type": "expect_table_row_count_to_be_between"
     },
     {
-      "id": "ebe337b1-7eff-47af-be10-c47146565a0f",
+      "id": "57212171-6fa0-4696-b62f-2552cacd4d04",
       "kwargs": {
         "column": "year"
       },
@@ -46,7 +46,7 @@
       "type": "expect_column_values_to_not_be_null"
     },
     {
-      "id": "7a76af0d-00f1-4f7f-abd4-4cabcca4f202",
+      "id": "a40ea140-2dd8-4e32-9042-0bf705f07800",
       "kwargs": {
         "column": "year",
         "max_value": 2019.0,
@@ -61,7 +61,7 @@
       "type": "expect_column_values_to_be_between"
     },
     {
-      "id": "30a54121-3a7f-4eb6-a6c1-3499d0b3f825",
+      "id": "bbd0f9c1-d711-4b3d-b476-4a4708dda797",
       "kwargs": {
         "column": "category"
       },
@@ -74,7 +74,7 @@
       "type": "expect_column_values_to_not_be_null"
     },
     {
-      "id": "ee2ecaf0-11dc-42f6-9004-280177bbcfb1",
+      "id": "8bc59b40-c41a-4626-be25-9bc89bbb0409",
       "kwargs": {
         "column": "winner"
       },
@@ -87,7 +87,7 @@
       "type": "expect_column_values_to_not_be_null"
     },
     {
-      "id": "1eac9510-c834-4236-a48d-ecbb67b8bad7",
+      "id": "96182c12-8a83-4743-a88e-2de9c73eaa78",
       "kwargs": {
         "column": "winner",
         "value_set": [
@@ -103,7 +103,7 @@
       "type": "expect_column_values_to_be_in_set"
     },
     {
-      "id": "d774c325-6f5f-40e4-b992-c66140431706",
+      "id": "7831bc51-4343-46c4-9ee5-aaa28a15b4fb",
       "kwargs": {
         "column_list": [
           "year",
@@ -120,7 +120,7 @@
       "type": "expect_compound_columns_to_be_unique"
     },
     {
-      "id": "b7b4f2e7-3185-4c8c-8bcb-cac766655321",
+      "id": "e2dddd7a-ecec-42e2-855f-caa9d4ab9f11",
       "kwargs": {
         "column_list": [
           "year",
@@ -137,7 +137,7 @@
       "type": "expect_compound_columns_to_be_unique"
     },
     {
-      "id": "c9f610c0-ffe4-44d2-bae5-22157c3c27c2",
+      "id": "cdae8ad7-a8b4-4269-980e-426fdc62e9e4",
       "kwargs": {
         "column": "artist",
         "mostly": 0.5
@@ -151,7 +151,7 @@
       "type": "expect_column_values_to_not_be_null"
     },
     {
-      "id": "8c70aade-2d42-44c7-a9b8-cc021338f75d",
+      "id": "5ca97391-6530-4801-942b-f2ff6880a9f0",
       "kwargs": {
         "column": "nominee",
         "mostly": 0.99

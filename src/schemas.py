@@ -76,3 +76,19 @@ PREPARED_CHECK_COLUMNS = [fk[0] for fk in FOREIGN_KEYS] + [
     "match_rate",                           # DQ-P11
 ]
 MIN_MATCH_RATE = 0.40  # DQ-P11
+
+# ---------------------------------------------------------
+# Tipos declarados al leer los archivos raw (X2)
+# Texto como object (como en clase). Tipos nullable (Int64, boolean)
+# para que un nulo llegue a GX en vez de romper la lectura.
+# ---------------------------------------------------------
+SPOTIFY_RAW_DTYPES = {
+    "track_id": "object", "artists": "object", "track_name": "object", "track_genre": "object",
+    "popularity": "Int64",
+    "danceability": "float64", "energy": "float64", "valence": "float64",
+    "acousticness": "float64", "tempo": "float64",
+}
+GRAMMY_RAW_DTYPES = {
+    "year": "Int64", "category": "object", "nominee": "object", "artist": "object",
+    "winner": "boolean",
+}
