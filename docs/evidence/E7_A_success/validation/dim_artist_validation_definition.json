@@ -1,0 +1,168 @@
+{
+  "success": true,
+  "results": [
+    {
+      "success": true,
+      "expectation_config": {
+        "type": "expect_table_columns_to_match_set",
+        "kwargs": {
+          "batch_id": "music_pandas_source-dim_artist",
+          "column_set": [
+            "artist_bk",
+            "artist_name",
+            "is_awarded"
+          ]
+        },
+        "meta": {
+          "layer": "prepared",
+          "requirements": "R1-R4",
+          "rule_id": "DQ-P01"
+        },
+        "id": "06fdbc1b-042c-4275-b8b4-0449add86657",
+        "severity": "critical"
+      },
+      "result": {
+        "observed_value": [
+          "artist_bk",
+          "artist_name",
+          "is_awarded"
+        ]
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_traceback": null,
+        "exception_message": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "type": "expect_table_row_count_to_be_between",
+        "kwargs": {
+          "batch_id": "music_pandas_source-dim_artist",
+          "min_value": 1
+        },
+        "meta": {
+          "layer": "prepared",
+          "requirements": "R1-R4",
+          "rule_id": "DQ-P01"
+        },
+        "id": "471b798e-c91c-4589-8e53-3880e9d75b02",
+        "severity": "critical"
+      },
+      "result": {
+        "observed_value": 29796
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_traceback": null,
+        "exception_message": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "type": "expect_column_values_to_not_be_null",
+        "kwargs": {
+          "batch_id": "music_pandas_source-dim_artist",
+          "column": "artist_bk"
+        },
+        "meta": {
+          "layer": "prepared",
+          "requirements": "R1-R4",
+          "rule_id": "DQ-P02"
+        },
+        "id": "72e11cd0-312a-48bb-ae8c-520691b77881",
+        "severity": "critical"
+      },
+      "result": {
+        "element_count": 29796,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "partial_unexpected_list": [],
+        "partial_unexpected_counts": [],
+        "partial_unexpected_index_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_traceback": null,
+        "exception_message": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "type": "expect_column_values_to_be_unique",
+        "kwargs": {
+          "batch_id": "music_pandas_source-dim_artist",
+          "column": "artist_bk"
+        },
+        "meta": {
+          "layer": "prepared",
+          "requirements": "R1-R4",
+          "rule_id": "DQ-P02"
+        },
+        "id": "4b89d1d0-1889-49e0-9e09-17f0c6be2383",
+        "severity": "critical"
+      },
+      "result": {
+        "element_count": 29796,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "partial_unexpected_list": [],
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_index_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_traceback": null,
+        "exception_message": null
+      }
+    }
+  ],
+  "suite_name": "dim_artist_suite",
+  "suite_parameters": {},
+  "statistics": {
+    "evaluated_expectations": 4,
+    "successful_expectations": 4,
+    "unsuccessful_expectations": 0,
+    "success_percent": 100.0
+  },
+  "meta": {
+    "great_expectations_version": "1.23.2",
+    "batch_spec": {
+      "batch_data": "PandasDataFrame"
+    },
+    "batch_markers": {
+      "ge_load_time": "20261016T175133.687510Z",
+      "pandas_data_fingerprint": "1d2d1684bfc484d2ab0e0b11a75fe830"
+    },
+    "active_batch_definition": {
+      "datasource_name": "music_pandas_source",
+      "data_connector_name": "fluent",
+      "data_asset_name": "dim_artist",
+      "batch_identifiers": {
+        "dataframe": "<DATAFRAME>"
+      }
+    },
+    "validation_id": "221902d0-fb4f-4554-b7dc-5856fce12a10",
+    "checkpoint_id": null,
+    "run_id": {
+      "run_name": null,
+      "run_time": "2026-10-16T17:51:33.850150+00:00"
+    },
+    "validation_time": "2026-10-16T17:51:33.850150+00:00",
+    "batch_parameters": {
+      "dataframe": "<DATAFRAME>"
+    }
+  },
+  "id": null
+}

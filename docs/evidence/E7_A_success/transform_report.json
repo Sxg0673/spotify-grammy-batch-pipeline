@@ -1,0 +1,44 @@
+{
+  "run_id": "manual__2026-10-16T17:49:00.513553+00:00",
+  "spotify": {
+    "filas_entrada": 114000,
+    "excl_sin_artists": 1,
+    "excl_duplicados": 450,
+    "pistas_inconsistentes": 0,
+    "pistas": 89740,
+    "audio_no_analizado": 157,
+    "pistas_sin_artista_valido": 0,
+    "canciones": 81165,
+    "filas_pista_artista": 123424,
+    "artistas": 29796
+  },
+  "grammy": {
+    "filas_entrada": 4810,
+    "excl_2019": 433,
+    "recuperadas_new_artist": 57,
+    "excl_fila_vacia": 6,
+    "excl_sin_artista": 1600,
+    "excl_various_artists": 59,
+    "excl_sin_nominee": 0,
+    "filas_atribuibles": 2712
+  },
+  "integracion": {
+    "pares_duplicados": 0,
+    "filas_emparejadas": 1342,
+    "filas_sin_coincidencia": 1370,
+    "tasa_emparejamiento": 0.4948,
+    "filas_premio_artista": 1478,
+    "artistas_premiados": 560
+  },
+  "salidas": {
+    "dim_artist": 29796,
+    "dim_year": 61,
+    "dim_category": 628,
+    "dim_genre": 114,
+    "dim_track": 89740,
+    "bridge_track_genre": 113549,
+    "fact_award": 1478,
+    "fact_track_artist": 123424
+  },
+  "generated_at_utc": "2026-10-16T17:51:07Z"
+}

@@ -1,0 +1,822 @@
+{
+  "success": true,
+  "results": [
+    {
+      "success": true,
+      "expectation_config": {
+        "type": "expect_table_columns_to_match_set",
+        "kwargs": {
+          "batch_id": "music_pandas_source-spotify_raw",
+          "column_set": [
+            "track_id",
+            "artists",
+            "track_name",
+            "track_genre",
+            "popularity",
+            "danceability",
+            "energy",
+            "valence",
+            "acousticness",
+            "tempo"
+          ]
+        },
+        "meta": {
+          "layer": "raw",
+          "requirements": "R1-R4",
+          "rule_id": "DQ-S01"
+        },
+        "id": "3288b4b7-0982-4dda-901b-e5cc1def1831",
+        "severity": "critical"
+      },
+      "result": {
+        "observed_value": [
+          "acousticness",
+          "artists",
+          "danceability",
+          "energy",
+          "popularity",
+          "tempo",
+          "track_genre",
+          "track_id",
+          "track_name",
+          "valence"
+        ]
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_traceback": null,
+        "exception_message": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "type": "expect_table_row_count_to_be_between",
+        "kwargs": {
+          "batch_id": "music_pandas_source-spotify_raw",
+          "min_value": 1
+        },
+        "meta": {
+          "layer": "raw",
+          "requirements": "R1-R4",
+          "rule_id": "DQ-S01"
+        },
+        "id": "1330cb12-3b4f-4fa8-b12b-1f3639a16096",
+        "severity": "critical"
+      },
+      "result": {
+        "observed_value": 114000
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_traceback": null,
+        "exception_message": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "type": "expect_compound_columns_to_be_unique",
+        "kwargs": {
+          "batch_id": "music_pandas_source-spotify_raw",
+          "column_list": [
+            "track_id",
+            "track_genre"
+          ],
+          "mostly": 0.99
+        },
+        "meta": {
+          "layer": "raw",
+          "requirements": "R1-R4",
+          "rule_id": "DQ-S03"
+        },
+        "id": "77b614c0-11e5-48b8-9421-4b497b4b0f20",
+        "severity": "warning"
+      },
+      "result": {
+        "element_count": 114000,
+        "unexpected_count": 894,
+        "unexpected_percent": 0.7842105263157895,
+        "partial_unexpected_list": [
+          {
+            "track_id": "0CDucx9lKxuCZplLXUz0iX",
+            "track_genre": "afrobeat"
+          },
+          {
+            "track_id": "0CDucx9lKxuCZplLXUz0iX",
+            "track_genre": "afrobeat"
+          },
+          {
+            "track_id": "2aibwv5hGXSgw7Yru8IYTO",
+            "track_genre": "alt-rock"
+          },
+          {
+            "track_id": "2aibwv5hGXSgw7Yru8IYTO",
+            "track_genre": "alt-rock"
+          },
+          {
+            "track_id": "7mULVp0DJrI2Nd6GesLvxn",
+            "track_genre": "alternative"
+          },
+          {
+            "track_id": "7mULVp0DJrI2Nd6GesLvxn",
+            "track_genre": "alternative"
+          },
+          {
+            "track_id": "6d3RIvHfVkoOtW1WHXmbX3",
+            "track_genre": "ambient"
+          },
+          {
+            "track_id": "6d3RIvHfVkoOtW1WHXmbX3",
+            "track_genre": "ambient"
+          },
+          {
+            "track_id": "481beimUiUnMUzSbOAFcUT",
+            "track_genre": "anime"
+          },
+          {
+            "track_id": "481beimUiUnMUzSbOAFcUT",
+            "track_genre": "anime"
+          },
+          {
+            "track_id": "57QCT8L3kFQiN4AXkBRJxW",
+            "track_genre": "black-metal"
+          },
+          {
+            "track_id": "57QCT8L3kFQiN4AXkBRJxW",
+            "track_genre": "black-metal"
+          },
+          {
+            "track_id": "3RIeNvIwO6ZRMLiwla7DdY",
+            "track_genre": "black-metal"
+          },
+          {
+            "track_id": "3RIeNvIwO6ZRMLiwla7DdY",
+            "track_genre": "black-metal"
+          },
+          {
+            "track_id": "6FmQMYlxRl56FIgOwvRBil",
+            "track_genre": "black-metal"
+          },
+          {
+            "track_id": "6FmQMYlxRl56FIgOwvRBil",
+            "track_genre": "black-metal"
+          },
+          {
+            "track_id": "6laLzRAweI0HEOYDMO4Kds",
+            "track_genre": "bluegrass"
+          },
+          {
+            "track_id": "6laLzRAweI0HEOYDMO4Kds",
+            "track_genre": "bluegrass"
+          },
+          {
+            "track_id": "5Aq43Qi1j27J5KQkKYYKq0",
+            "track_genre": "bluegrass"
+          },
+          {
+            "track_id": "5Aq43Qi1j27J5KQkKYYKq0",
+            "track_genre": "bluegrass"
+          }
+        ],
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "unexpected_percent_total": 0.7842105263157895,
+        "unexpected_percent_nonmissing": 0.7842105263157895,
+        "partial_unexpected_counts": [
+          {
+            "value": [
+              "0CDucx9lKxuCZplLXUz0iX",
+              "afrobeat"
+            ],
+            "count": 2
+          },
+          {
+            "value": [
+              "2aibwv5hGXSgw7Yru8IYTO",
+              "alt-rock"
+            ],
+            "count": 2
+          },
+          {
+            "value": [
+              "3RIeNvIwO6ZRMLiwla7DdY",
+              "black-metal"
+            ],
+            "count": 2
+          },
+          {
+            "value": [
+              "481beimUiUnMUzSbOAFcUT",
+              "anime"
+            ],
+            "count": 2
+          },
+          {
+            "value": [
+              "57QCT8L3kFQiN4AXkBRJxW",
+              "black-metal"
+            ],
+            "count": 2
+          },
+          {
+            "value": [
+              "5Aq43Qi1j27J5KQkKYYKq0",
+              "bluegrass"
+            ],
+            "count": 2
+          },
+          {
+            "value": [
+              "6FmQMYlxRl56FIgOwvRBil",
+              "black-metal"
+            ],
+            "count": 2
+          },
+          {
+            "value": [
+              "6d3RIvHfVkoOtW1WHXmbX3",
+              "ambient"
+            ],
+            "count": 2
+          },
+          {
+            "value": [
+              "6laLzRAweI0HEOYDMO4Kds",
+              "bluegrass"
+            ],
+            "count": 2
+          },
+          {
+            "value": [
+              "7mULVp0DJrI2Nd6GesLvxn",
+              "alternative"
+            ],
+            "count": 2
+          }
+        ],
+        "partial_unexpected_index_list": [
+          1874,
+          1925,
+          2109,
+          2155,
+          3683,
+          3738,
+          4598,
+          4648,
+          5721,
+          5769,
+          6090,
+          6134,
+          6501,
+          6557,
+          6803,
+          6856,
+          7299,
+          7347,
+          7794,
+          7844
+        ]
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_traceback": null,
+        "exception_message": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "type": "expect_column_values_to_not_be_null",
+        "kwargs": {
+          "batch_id": "music_pandas_source-spotify_raw",
+          "column": "track_id"
+        },
+        "meta": {
+          "layer": "raw",
+          "requirements": "R1-R4",
+          "rule_id": "DQ-S02"
+        },
+        "id": "01e3f69a-36c8-4f7a-ba5a-b937e212e152",
+        "severity": "critical"
+      },
+      "result": {
+        "element_count": 114000,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "partial_unexpected_list": [],
+        "partial_unexpected_counts": [],
+        "partial_unexpected_index_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_traceback": null,
+        "exception_message": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "type": "expect_column_values_to_be_between",
+        "kwargs": {
+          "batch_id": "music_pandas_source-spotify_raw",
+          "column": "popularity",
+          "min_value": 0.0,
+          "max_value": 100.0
+        },
+        "meta": {
+          "layer": "raw",
+          "requirements": "R1,R4",
+          "rule_id": "DQ-S04"
+        },
+        "id": "14c68961-56ec-41cb-9c5a-1cf70a617e88",
+        "severity": "critical"
+      },
+      "result": {
+        "element_count": 114000,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "partial_unexpected_list": [],
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_index_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_traceback": null,
+        "exception_message": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "type": "expect_column_values_to_be_between",
+        "kwargs": {
+          "batch_id": "music_pandas_source-spotify_raw",
+          "column": "popularity",
+          "mostly": 0.8,
+          "min_value": 1.0
+        },
+        "meta": {
+          "layer": "raw",
+          "requirements": "R1,R4",
+          "rule_id": "DQ-S10"
+        },
+        "id": "3e2524e8-0a0f-4c29-b727-c1e693ce3e08",
+        "severity": "info"
+      },
+      "result": {
+        "element_count": 114000,
+        "unexpected_count": 16020,
+        "unexpected_percent": 14.05263157894737,
+        "partial_unexpected_list": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "unexpected_percent_total": 14.05263157894737,
+        "unexpected_percent_nonmissing": 14.05263157894737,
+        "partial_unexpected_counts": [
+          {
+            "value": 0,
+            "count": 20
+          }
+        ],
+        "partial_unexpected_index_list": [
+          23,
+          24,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43
+        ]
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_traceback": null,
+        "exception_message": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "type": "expect_column_values_to_be_between",
+        "kwargs": {
+          "batch_id": "music_pandas_source-spotify_raw",
+          "column": "danceability",
+          "min_value": 0.0,
+          "max_value": 1.0
+        },
+        "meta": {
+          "layer": "raw",
+          "requirements": "R1",
+          "rule_id": "DQ-S05"
+        },
+        "id": "523757ed-f9ba-480e-8230-07e69d60a96d",
+        "severity": "critical"
+      },
+      "result": {
+        "element_count": 114000,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "partial_unexpected_list": [],
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_index_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_traceback": null,
+        "exception_message": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "type": "expect_column_values_to_be_between",
+        "kwargs": {
+          "batch_id": "music_pandas_source-spotify_raw",
+          "column": "energy",
+          "min_value": 0.0,
+          "max_value": 1.0
+        },
+        "meta": {
+          "layer": "raw",
+          "requirements": "R1",
+          "rule_id": "DQ-S05"
+        },
+        "id": "c5db3d2a-c118-4d68-8411-d825c43d12d1",
+        "severity": "critical"
+      },
+      "result": {
+        "element_count": 114000,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "partial_unexpected_list": [],
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_index_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_traceback": null,
+        "exception_message": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "type": "expect_column_values_to_be_between",
+        "kwargs": {
+          "batch_id": "music_pandas_source-spotify_raw",
+          "column": "valence",
+          "min_value": 0.0,
+          "max_value": 1.0
+        },
+        "meta": {
+          "layer": "raw",
+          "requirements": "R1",
+          "rule_id": "DQ-S05"
+        },
+        "id": "11c8b47d-cd38-423a-a2da-d89178bbc394",
+        "severity": "critical"
+      },
+      "result": {
+        "element_count": 114000,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "partial_unexpected_list": [],
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_index_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_traceback": null,
+        "exception_message": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "type": "expect_column_values_to_be_between",
+        "kwargs": {
+          "batch_id": "music_pandas_source-spotify_raw",
+          "column": "acousticness",
+          "min_value": 0.0,
+          "max_value": 1.0
+        },
+        "meta": {
+          "layer": "raw",
+          "requirements": "R1",
+          "rule_id": "DQ-S05"
+        },
+        "id": "f0670c90-ffcd-45f3-b2cf-c97710ac9fac",
+        "severity": "critical"
+      },
+      "result": {
+        "element_count": 114000,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "partial_unexpected_list": [],
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_index_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_traceback": null,
+        "exception_message": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "type": "expect_column_values_to_be_between",
+        "kwargs": {
+          "batch_id": "music_pandas_source-spotify_raw",
+          "column": "tempo",
+          "min_value": 0.0
+        },
+        "meta": {
+          "layer": "raw",
+          "requirements": "R1",
+          "rule_id": "DQ-S06"
+        },
+        "id": "ac581f31-6d0f-403a-9a82-87f9c618f8fe",
+        "severity": "critical"
+      },
+      "result": {
+        "element_count": 114000,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "partial_unexpected_list": [],
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_index_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_traceback": null,
+        "exception_message": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "type": "expect_column_values_to_be_between",
+        "kwargs": {
+          "batch_id": "music_pandas_source-spotify_raw",
+          "column": "tempo",
+          "mostly": 0.99,
+          "min_value": 0.0,
+          "strict_min": true
+        },
+        "meta": {
+          "layer": "raw",
+          "requirements": "R1",
+          "rule_id": "DQ-S09"
+        },
+        "id": "dab80bda-7b61-41df-9009-8e853c28f43f",
+        "severity": "info"
+      },
+      "result": {
+        "element_count": 114000,
+        "unexpected_count": 157,
+        "unexpected_percent": 0.13771929824561402,
+        "partial_unexpected_list": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "unexpected_percent_total": 0.13771929824561402,
+        "unexpected_percent_nonmissing": 0.13771929824561402,
+        "partial_unexpected_counts": [
+          {
+            "value": 0.0,
+            "count": 20
+          }
+        ],
+        "partial_unexpected_index_list": [
+          4131,
+          4379,
+          4664,
+          45670,
+          45720,
+          45729,
+          45773,
+          59221,
+          59310,
+          59473,
+          59812,
+          64826,
+          76716,
+          76736,
+          93111,
+          98779,
+          101041,
+          101043,
+          101048,
+          101057
+        ]
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_traceback": null,
+        "exception_message": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "type": "expect_column_values_to_not_be_null",
+        "kwargs": {
+          "batch_id": "music_pandas_source-spotify_raw",
+          "column": "artists",
+          "mostly": 0.99
+        },
+        "meta": {
+          "layer": "raw",
+          "requirements": "R1-R4",
+          "rule_id": "DQ-S07"
+        },
+        "id": "38e5328b-b930-4d81-a2c6-2dd2b8dc8f9f",
+        "severity": "warning"
+      },
+      "result": {
+        "element_count": 114000,
+        "unexpected_count": 1,
+        "unexpected_percent": 0.0008771929824561403,
+        "partial_unexpected_list": [
+          null
+        ],
+        "partial_unexpected_counts": [
+          {
+            "value": null,
+            "count": 1
+          }
+        ],
+        "partial_unexpected_index_list": [
+          65900
+        ]
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_traceback": null,
+        "exception_message": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "type": "expect_column_values_to_not_be_null",
+        "kwargs": {
+          "batch_id": "music_pandas_source-spotify_raw",
+          "column": "track_genre",
+          "mostly": 0.99
+        },
+        "meta": {
+          "layer": "raw",
+          "requirements": "R2",
+          "rule_id": "DQ-S08"
+        },
+        "id": "160b38ad-84da-41c6-b88c-057ba0e1e583",
+        "severity": "warning"
+      },
+      "result": {
+        "element_count": 114000,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "partial_unexpected_list": [],
+        "partial_unexpected_counts": [],
+        "partial_unexpected_index_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_traceback": null,
+        "exception_message": null
+      }
+    }
+  ],
+  "suite_name": "spotify_raw_suite",
+  "suite_parameters": {},
+  "statistics": {
+    "evaluated_expectations": 14,
+    "successful_expectations": 14,
+    "unsuccessful_expectations": 0,
+    "success_percent": 100.0
+  },
+  "meta": {
+    "great_expectations_version": "1.23.2",
+    "batch_spec": {
+      "batch_data": "PandasDataFrame"
+    },
+    "batch_markers": {
+      "ge_load_time": "20261016T175028.318553Z",
+      "pandas_data_fingerprint": "1c8802c05520d43a7f0412df279f7221"
+    },
+    "active_batch_definition": {
+      "datasource_name": "music_pandas_source",
+      "data_connector_name": "fluent",
+      "data_asset_name": "spotify_raw",
+      "batch_identifiers": {
+        "dataframe": "<DATAFRAME>"
+      }
+    },
+    "validation_id": "f4078ed2-b7a8-4c71-b4ba-e0d6ff4c4345",
+    "checkpoint_id": "7f0b3b26-13e2-4ade-bed8-b48006e358a7",
+    "run_id": {
+      "run_name": null,
+      "run_time": "2026-10-16T17:50:28.277616+00:00"
+    },
+    "validation_time": "2026-10-16T17:50:28.277616+00:00",
+    "batch_parameters": {
+      "dataframe": "<DATAFRAME>"
+    }
+  },
+  "id": null
+}
