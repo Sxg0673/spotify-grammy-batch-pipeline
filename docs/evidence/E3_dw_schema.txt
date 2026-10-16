@@ -1,0 +1,15 @@
+# E3 - Esquema del DW (music_dw)
+# Generado: 2026-10-16T07:17:14Z
+              List of relations
+ Schema |        Name        | Type  | Owner 
+--------+--------------------+-------+-------
+ public | bridge_track_genre | table | admin
+ public | dim_artist         | table | admin
+ public | dim_category       | table | admin
+ public | dim_genre          | table | admin
+ public | dim_track          | table | admin
+ public | dim_year           | table | admin
+ public | fact_award         | table | admin
+ public | fact_track_artist  | table | admin
+(8 rows)
+
