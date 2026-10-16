@@ -39,9 +39,9 @@ Fuente de evidencia: `notebooks/data_profiling.ipynb` (los números entre parén
 | Rule ID | Atributo(s) | Dimensión | Regla | Métrica / umbral | Severidad | Justificación | Riesgo | Req. |
 |---|---|---|---|---|---|---|---|---|
 | DQ-G01 | Columnas requeridas | Estructura | El lote contiene exactamente las columnas requeridas y al menos 1 fila | 100 % | Critical | Sin estas columnas no se puede responder R1–R4 (D12) | RS01 | R1–R4 |
-| DQ-G02 | `year` | Validez | Entero entre 1958 y el año de ejecución | 100 % | Critical | Primer año de la fuente: 1958 (21); un año fuera de rango rompe la década (D16) | RG06 | R1, R3 |
+| DQ-G02 | `year` | Validez | No nulo y entre 1958 y 2019 | 100 % | Critical | Rango del contrato de la fuente (21); un año fuera de rango rompe la década (D16). Un año nuevo exige revisar el contrato | RG06 | R1, R3 |
 | DQ-G03 | `category` | Completitud | `category` nunca es nula | 100 % | Critical | Forma parte del grano del premio y la usa D2; 0 nulos observados (6) | RG03 | R1–R4 |
-| DQ-G04 | `winner` | Validez | Solo toma el valor `True` | 100 % | Critical | Contrato semántico de la fuente: solo ganadores (15); la definición de premiado depende de él (D15) | RG01 | R1, R3, R4 |
+| DQ-G04 | `winner` | Validez | No nulo y solo toma el valor `True` | 100 % | Critical | Contrato semántico de la fuente: solo ganadores (15); la definición de premiado depende de él (D15) | RG01 | R1, R3, R4 |
 | DQ-G05 | `year`, `category`, `nominee` | Unicidad | Un premio no se repite | 100 % | Critical | 0 duplicados observados (13); un duplicado inflaría el conteo de premios | RG04 | R4 |
 | DQ-G06 | `year`, `category` | Consistencia | Una categoría por año casi siempre tiene un solo ganador | ≥ 95 % de filas únicas | Warning | Entre 1958 y 2018 los empates no pasan del 2.4 % de grupos por año (30); detecta lotes contaminados con nominados, como 2019. Se espera que falle con el lote actual; D1 lo resuelve | RG01 | R1, R3, R4 |
 | DQ-G07 | `artist` | Completitud | `artist` no es nulo | ≥ 50 % | Warning | Los nulos son estructurales por categoría (33); hoy 61.75 %; por debajo del 50 % la mayoría de premios no sería atribuible | RG02 | R1–R4 |
