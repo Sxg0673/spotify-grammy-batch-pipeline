@@ -9,3 +9,8 @@ de datos, en cambio, se propaga tal cual y Airflow lo reintenta según la polít
 class SourceContractError(Exception):
     """La fuente no cumple su contrato: falta el archivo o la tabla, falta una columna
     requerida o un valor no se puede leer con su tipo declarado. Repetir no lo corrige."""
+
+
+class CriticalQualityError(Exception):
+    """Una compuerta de validación encontró al menos una falla de severidad critical.
+    Falla determinista: la misma entrada vuelve a fallar, así que no se reintenta."""
