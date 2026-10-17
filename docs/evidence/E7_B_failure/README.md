@@ -26,4 +26,4 @@ se convierte en `AirflowFailException`, por lo que Airflow no la reintenta: la t
 - `validate_spotify_raw_attempt1.log`: log del único intento.
 - `validation/`: resúmenes y definiciones de validación de GX.
 - `dw_despues_de_falla.txt`: conteos del DW tras la falla.
-- Capturas del Graph y del Grid del run (se agregan al registrar la evidencia).
+- `E7_B_trigger_params.png`, `E7_B_graph.png` y `E7_B_grid.png`: parámetro activado, Graph (falla en rojo, aguas abajo upstream_failed) y Grid (un intento en la tarea fallida).
