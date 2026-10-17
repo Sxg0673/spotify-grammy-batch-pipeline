@@ -1,0 +1,10 @@
+== Conexion declarada en el .twb (sin credenciales)
+<connection authentication='username-password' class='postgres' dbname='music_dw' one-time-sql='' port='5432' server='localhost' username='dashboard_user' />
+
+== Objetos del DW que consume el libro (referencias por objeto)
+   2 table='[public].[v_kpi_r1_decada]'
+   2 table='[public].[v_kpi_r2_genero]'
+   2 table='[public].[v_kpi_r3_colaboracion]'
+   2 table='[public].[v_kpi_r4_artista]'
+   2 table='[public].[v_kpi_r4_tramos]'
+   2 table='[public].[v_kpi_resumen]'

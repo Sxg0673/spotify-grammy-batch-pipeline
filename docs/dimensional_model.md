@@ -81,3 +81,20 @@ El modelo representa dos procesos de negocio distintos, conectados únicamente p
 - Los artistas de Grammy que no se emparejan con Spotify no entran al DW; su conteo por motivo se registra en las métricas de cada corrida (D3).
 - El año 2019 no entra al DW (D1).
 - Las categorías cuyo premio no es del intérprete solo aparecen si su fila tiene un artista atribuible (D2–D4).
+
+## 8. Capa de consumo: vistas de KPI
+
+El modelo no cambia para el dashboard. Encima de él, `sql/kpi_views.sql` define vistas que fijan las reglas de cálculo en SQL versionado, de modo que la herramienta de BI solo lee resultados.
+
+| Vista | Una fila por | Regla que aplica |
+| --- | --- | --- |
+| `v_song_artist` | canción × artista | Popularidad = máximo entre versiones (D8); audio de la versión representativa |
+| `v_artista_colaboracion` | artista con al menos 5 canciones | % de canciones en colaboración (D11) y marca de premiado |
+| `v_kpi_r1_decada` | década del premio | Popularidad mediana, % con popularidad 0 y perfil sonoro de los premiados, contando cada canción una vez |
+| `v_kpi_r2_genero` | género | Artistas premiados, su % sobre el total de premiados, canciones y popularidad mediana |
+| `v_kpi_r3_colaboracion` | grupo y década | Mediana del % de colaboración: premiados por década y no premiados como referencia |
+| `v_kpi_r4_artista` | artista premiado | Premios, tramo de premios y popularidad mediana |
+| `v_kpi_r4_tramos` | tramo de premios | Artistas, popularidad mediana y correlación entre premios y popularidad |
+| `v_kpi_resumen` | fila única | Los valores de las cuatro tarjetas de KPI |
+
+`dashboard_user` solo tiene `SELECT` sobre las seis vistas `v_kpi_*`. Las vistas intermedias y las tablas del modelo no son accesibles para ese rol. Uso y evidencias en `docs/dashboard/README.md`.

@@ -24,3 +24,7 @@ data/work/
 
 # Fuentes alteradas para pruebas (se regeneran con src/make_bad_source.py)
 data/raw/*_bad.csv
+
+# Archivos temporales de Tableau
+.~*
+*.twbr
