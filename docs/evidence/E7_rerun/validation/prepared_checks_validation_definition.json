@@ -1,0 +1,537 @@
+{
+  "success": true,
+  "results": [
+    {
+      "success": true,
+      "expectation_config": {
+        "type": "expect_table_columns_to_match_set",
+        "kwargs": {
+          "batch_id": "music_pandas_source-prepared_checks",
+          "column_set": [
+            "orphans_fact_award_year",
+            "orphans_fact_award_category",
+            "orphans_fact_award_artist",
+            "orphans_fact_track_artist_track",
+            "orphans_fact_track_artist_artist",
+            "orphans_bridge_track",
+            "orphans_bridge_genre",
+            "audio_partial_nulls",
+            "collaboration_mismatches",
+            "songs_without_single_representative",
+            "awarded_mismatches",
+            "match_rate"
+          ]
+        },
+        "meta": {
+          "layer": "prepared",
+          "requirements": "R1-R4",
+          "rule_id": "DQ-P01"
+        },
+        "id": "7e51899f-ca61-45c7-926a-ad2adfbcbedd",
+        "severity": "critical"
+      },
+      "result": {
+        "observed_value": [
+          "audio_partial_nulls",
+          "awarded_mismatches",
+          "collaboration_mismatches",
+          "match_rate",
+          "orphans_bridge_genre",
+          "orphans_bridge_track",
+          "orphans_fact_award_artist",
+          "orphans_fact_award_category",
+          "orphans_fact_award_year",
+          "orphans_fact_track_artist_artist",
+          "orphans_fact_track_artist_track",
+          "songs_without_single_representative"
+        ]
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_traceback": null,
+        "exception_message": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "type": "expect_column_values_to_be_between",
+        "kwargs": {
+          "batch_id": "music_pandas_source-prepared_checks",
+          "column": "orphans_fact_award_year",
+          "min_value": 0.0,
+          "max_value": 0.0
+        },
+        "meta": {
+          "layer": "prepared",
+          "requirements": "R1-R4",
+          "rule_id": "DQ-P04"
+        },
+        "id": "dc5e9a45-c3ea-4849-b620-713c2b0cad41",
+        "severity": "critical"
+      },
+      "result": {
+        "element_count": 1,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "partial_unexpected_list": [],
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_index_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_traceback": null,
+        "exception_message": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "type": "expect_column_values_to_be_between",
+        "kwargs": {
+          "batch_id": "music_pandas_source-prepared_checks",
+          "column": "orphans_fact_award_category",
+          "min_value": 0.0,
+          "max_value": 0.0
+        },
+        "meta": {
+          "layer": "prepared",
+          "requirements": "R1-R4",
+          "rule_id": "DQ-P04"
+        },
+        "id": "9c3b4a55-8f67-4436-916d-d61a4ceada2a",
+        "severity": "critical"
+      },
+      "result": {
+        "element_count": 1,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "partial_unexpected_list": [],
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_index_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_traceback": null,
+        "exception_message": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "type": "expect_column_values_to_be_between",
+        "kwargs": {
+          "batch_id": "music_pandas_source-prepared_checks",
+          "column": "orphans_fact_award_artist",
+          "min_value": 0.0,
+          "max_value": 0.0
+        },
+        "meta": {
+          "layer": "prepared",
+          "requirements": "R1-R4",
+          "rule_id": "DQ-P04"
+        },
+        "id": "eed0079e-baa9-4966-9dbe-78f02a2554e5",
+        "severity": "critical"
+      },
+      "result": {
+        "element_count": 1,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "partial_unexpected_list": [],
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_index_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_traceback": null,
+        "exception_message": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "type": "expect_column_values_to_be_between",
+        "kwargs": {
+          "batch_id": "music_pandas_source-prepared_checks",
+          "column": "orphans_fact_track_artist_track",
+          "min_value": 0.0,
+          "max_value": 0.0
+        },
+        "meta": {
+          "layer": "prepared",
+          "requirements": "R1-R4",
+          "rule_id": "DQ-P04"
+        },
+        "id": "f2749643-effc-47d6-82e7-d16266baf7b3",
+        "severity": "critical"
+      },
+      "result": {
+        "element_count": 1,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "partial_unexpected_list": [],
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_index_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_traceback": null,
+        "exception_message": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "type": "expect_column_values_to_be_between",
+        "kwargs": {
+          "batch_id": "music_pandas_source-prepared_checks",
+          "column": "orphans_fact_track_artist_artist",
+          "min_value": 0.0,
+          "max_value": 0.0
+        },
+        "meta": {
+          "layer": "prepared",
+          "requirements": "R1-R4",
+          "rule_id": "DQ-P04"
+        },
+        "id": "f3086460-ab7d-4318-b146-3df06d547e65",
+        "severity": "critical"
+      },
+      "result": {
+        "element_count": 1,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "partial_unexpected_list": [],
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_index_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_traceback": null,
+        "exception_message": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "type": "expect_column_values_to_be_between",
+        "kwargs": {
+          "batch_id": "music_pandas_source-prepared_checks",
+          "column": "orphans_bridge_track",
+          "min_value": 0.0,
+          "max_value": 0.0
+        },
+        "meta": {
+          "layer": "prepared",
+          "requirements": "R1-R4",
+          "rule_id": "DQ-P04"
+        },
+        "id": "e93a2a95-1615-4cb2-83d7-515f5a987d48",
+        "severity": "critical"
+      },
+      "result": {
+        "element_count": 1,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "partial_unexpected_list": [],
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_index_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_traceback": null,
+        "exception_message": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "type": "expect_column_values_to_be_between",
+        "kwargs": {
+          "batch_id": "music_pandas_source-prepared_checks",
+          "column": "orphans_bridge_genre",
+          "min_value": 0.0,
+          "max_value": 0.0
+        },
+        "meta": {
+          "layer": "prepared",
+          "requirements": "R1-R4",
+          "rule_id": "DQ-P04"
+        },
+        "id": "919af62b-11a2-438d-b543-42626f05825c",
+        "severity": "critical"
+      },
+      "result": {
+        "element_count": 1,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "partial_unexpected_list": [],
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_index_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_traceback": null,
+        "exception_message": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "type": "expect_column_values_to_be_between",
+        "kwargs": {
+          "batch_id": "music_pandas_source-prepared_checks",
+          "column": "audio_partial_nulls",
+          "min_value": 0.0,
+          "max_value": 0.0
+        },
+        "meta": {
+          "layer": "prepared",
+          "requirements": "R1",
+          "rule_id": "DQ-P07"
+        },
+        "id": "859881c2-05c3-48df-8be6-85f04012a00b",
+        "severity": "critical"
+      },
+      "result": {
+        "element_count": 1,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "partial_unexpected_list": [],
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_index_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_traceback": null,
+        "exception_message": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "type": "expect_column_values_to_be_between",
+        "kwargs": {
+          "batch_id": "music_pandas_source-prepared_checks",
+          "column": "collaboration_mismatches",
+          "min_value": 0.0,
+          "max_value": 0.0
+        },
+        "meta": {
+          "layer": "prepared",
+          "requirements": "R3",
+          "rule_id": "DQ-P08"
+        },
+        "id": "5a1521b7-9757-4cdf-8491-7d05f53de0ab",
+        "severity": "critical"
+      },
+      "result": {
+        "element_count": 1,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "partial_unexpected_list": [],
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_index_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_traceback": null,
+        "exception_message": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "type": "expect_column_values_to_be_between",
+        "kwargs": {
+          "batch_id": "music_pandas_source-prepared_checks",
+          "column": "songs_without_single_representative",
+          "min_value": 0.0,
+          "max_value": 0.0
+        },
+        "meta": {
+          "layer": "prepared",
+          "requirements": "R1,R3,R4",
+          "rule_id": "DQ-P09"
+        },
+        "id": "9b8df4ce-7dd8-4624-a3b6-15cd31fc35f5",
+        "severity": "critical"
+      },
+      "result": {
+        "element_count": 1,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "partial_unexpected_list": [],
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_index_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_traceback": null,
+        "exception_message": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "type": "expect_column_values_to_be_between",
+        "kwargs": {
+          "batch_id": "music_pandas_source-prepared_checks",
+          "column": "awarded_mismatches",
+          "min_value": 0.0,
+          "max_value": 0.0
+        },
+        "meta": {
+          "layer": "prepared",
+          "requirements": "R1-R4",
+          "rule_id": "DQ-P10"
+        },
+        "id": "e5708522-4ef3-49e9-a2c5-7ae3cd6baa33",
+        "severity": "critical"
+      },
+      "result": {
+        "element_count": 1,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "partial_unexpected_list": [],
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_index_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_traceback": null,
+        "exception_message": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "type": "expect_column_values_to_be_between",
+        "kwargs": {
+          "batch_id": "music_pandas_source-prepared_checks",
+          "column": "match_rate",
+          "min_value": 0.4
+        },
+        "meta": {
+          "layer": "prepared",
+          "requirements": "R1-R4",
+          "rule_id": "DQ-P11"
+        },
+        "id": "2fedcbf4-2500-4228-a46e-bfced0f1ff78",
+        "severity": "warning"
+      },
+      "result": {
+        "element_count": 1,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "partial_unexpected_list": [],
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_index_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_traceback": null,
+        "exception_message": null
+      }
+    }
+  ],
+  "suite_name": "prepared_checks_suite",
+  "suite_parameters": {},
+  "statistics": {
+    "evaluated_expectations": 13,
+    "successful_expectations": 13,
+    "unsuccessful_expectations": 0,
+    "success_percent": 100.0
+  },
+  "meta": {
+    "great_expectations_version": "1.23.2",
+    "batch_spec": {
+      "batch_data": "PandasDataFrame"
+    },
+    "batch_markers": {
+      "ge_load_time": "20261017T055548.145594Z",
+      "pandas_data_fingerprint": "6d2924ac6730a53a37d7a7d7f9da3554"
+    },
+    "active_batch_definition": {
+      "datasource_name": "music_pandas_source",
+      "data_connector_name": "fluent",
+      "data_asset_name": "prepared_checks",
+      "batch_identifiers": {
+        "dataframe": "<DATAFRAME>"
+      }
+    },
+    "validation_id": "14475d84-63ed-4015-a939-442d94a68e7d",
+    "checkpoint_id": null,
+    "run_id": {
+      "run_name": null,
+      "run_time": "2026-10-17T05:55:48.428187+00:00"
+    },
+    "validation_time": "2026-10-17T05:55:48.428187+00:00",
+    "batch_parameters": {
+      "dataframe": "<DATAFRAME>"
+    }
+  },
+  "id": null
+}

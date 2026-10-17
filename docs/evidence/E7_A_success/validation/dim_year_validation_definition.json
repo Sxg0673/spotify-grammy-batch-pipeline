@@ -1,0 +1,247 @@
+{
+  "success": true,
+  "results": [
+    {
+      "success": true,
+      "expectation_config": {
+        "type": "expect_table_columns_to_match_set",
+        "kwargs": {
+          "batch_id": "music_pandas_source-dim_year",
+          "column_set": [
+            "year",
+            "decade"
+          ]
+        },
+        "meta": {
+          "layer": "prepared",
+          "requirements": "R1-R4",
+          "rule_id": "DQ-P01"
+        },
+        "id": "92a14837-c004-4dd1-b2c1-deca8a367b5b",
+        "severity": "critical"
+      },
+      "result": {
+        "observed_value": [
+          "decade",
+          "year"
+        ]
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_traceback": null,
+        "exception_message": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "type": "expect_table_row_count_to_be_between",
+        "kwargs": {
+          "batch_id": "music_pandas_source-dim_year",
+          "min_value": 1
+        },
+        "meta": {
+          "layer": "prepared",
+          "requirements": "R1-R4",
+          "rule_id": "DQ-P01"
+        },
+        "id": "8f17d37c-ff14-4b59-8faa-b8bbd0769016",
+        "severity": "critical"
+      },
+      "result": {
+        "observed_value": 61
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_traceback": null,
+        "exception_message": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "type": "expect_column_values_to_not_be_null",
+        "kwargs": {
+          "batch_id": "music_pandas_source-dim_year",
+          "column": "year"
+        },
+        "meta": {
+          "layer": "prepared",
+          "requirements": "R1-R4",
+          "rule_id": "DQ-P02"
+        },
+        "id": "7eb5eac6-26e1-4503-a470-a5e9b3f7df2b",
+        "severity": "critical"
+      },
+      "result": {
+        "element_count": 61,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "partial_unexpected_list": [],
+        "partial_unexpected_counts": [],
+        "partial_unexpected_index_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_traceback": null,
+        "exception_message": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "type": "expect_column_values_to_be_unique",
+        "kwargs": {
+          "batch_id": "music_pandas_source-dim_year",
+          "column": "year"
+        },
+        "meta": {
+          "layer": "prepared",
+          "requirements": "R1-R4",
+          "rule_id": "DQ-P02"
+        },
+        "id": "a48b0499-23c3-48b7-ac7c-471e8caef5e4",
+        "severity": "critical"
+      },
+      "result": {
+        "element_count": 61,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "partial_unexpected_list": [],
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_index_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_traceback": null,
+        "exception_message": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "type": "expect_column_values_to_be_between",
+        "kwargs": {
+          "batch_id": "music_pandas_source-dim_year",
+          "column": "year",
+          "min_value": 1958.0,
+          "max_value": 2018.0
+        },
+        "meta": {
+          "layer": "prepared",
+          "requirements": "R1,R3",
+          "rule_id": "DQ-P05"
+        },
+        "id": "a55ec31f-9618-4e75-9f36-a68210bd7212",
+        "severity": "critical"
+      },
+      "result": {
+        "element_count": 61,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "partial_unexpected_list": [],
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_index_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_traceback": null,
+        "exception_message": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "type": "expect_column_values_to_be_in_set",
+        "kwargs": {
+          "batch_id": "music_pandas_source-dim_year",
+          "column": "decade",
+          "value_set": [
+            1950,
+            1960,
+            1970,
+            1980,
+            1990,
+            2000,
+            2010
+          ]
+        },
+        "meta": {
+          "layer": "prepared",
+          "requirements": "R1,R3",
+          "rule_id": "DQ-P05"
+        },
+        "id": "d8e592b6-cbde-41d8-9dd7-efd807bf94fe",
+        "severity": "critical"
+      },
+      "result": {
+        "element_count": 61,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "partial_unexpected_list": [],
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_index_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_traceback": null,
+        "exception_message": null
+      }
+    }
+  ],
+  "suite_name": "dim_year_suite",
+  "suite_parameters": {},
+  "statistics": {
+    "evaluated_expectations": 6,
+    "successful_expectations": 6,
+    "unsuccessful_expectations": 0,
+    "success_percent": 100.0
+  },
+  "meta": {
+    "great_expectations_version": "1.23.2",
+    "batch_spec": {
+      "batch_data": "PandasDataFrame"
+    },
+    "batch_markers": {
+      "ge_load_time": "20261016T175133.924487Z",
+      "pandas_data_fingerprint": "af37897a3c5dead254c1ddafbaeef036"
+    },
+    "active_batch_definition": {
+      "datasource_name": "music_pandas_source",
+      "data_connector_name": "fluent",
+      "data_asset_name": "dim_year",
+      "batch_identifiers": {
+        "dataframe": "<DATAFRAME>"
+      }
+    },
+    "validation_id": "de59ffc7-67b2-4ea9-b702-ff441f7e63fb",
+    "checkpoint_id": null,
+    "run_id": {
+      "run_name": null,
+      "run_time": "2026-10-16T17:51:34.052342+00:00"
+    },
+    "validation_time": "2026-10-16T17:51:34.052342+00:00",
+    "batch_parameters": {
+      "dataframe": "<DATAFRAME>"
+    }
+  },
+  "id": null
+}

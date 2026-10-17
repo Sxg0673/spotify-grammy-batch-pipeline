@@ -1,0 +1,75 @@
+{
+  "expectations": [
+    {
+      "id": "78ac6118-ad59-4a54-ade1-cf0570ab4c54",
+      "kwargs": {
+        "column_set": [
+          "year",
+          "category_bk",
+          "nominee",
+          "artist_bk",
+          "award_count"
+        ]
+      },
+      "meta": {
+        "layer": "prepared",
+        "requirements": "R1-R4",
+        "rule_id": "DQ-P01"
+      },
+      "severity": "critical",
+      "type": "expect_table_columns_to_match_set"
+    },
+    {
+      "id": "de6c9c8e-6306-4650-89d3-32bace1d7ed7",
+      "kwargs": {
+        "min_value": 1
+      },
+      "meta": {
+        "layer": "prepared",
+        "requirements": "R1-R4",
+        "rule_id": "DQ-P01"
+      },
+      "severity": "critical",
+      "type": "expect_table_row_count_to_be_between"
+    },
+    {
+      "id": "f154da11-c660-4302-b7e6-8004d5cd6c74",
+      "kwargs": {
+        "column_list": [
+          "year",
+          "category_bk",
+          "nominee",
+          "artist_bk"
+        ]
+      },
+      "meta": {
+        "layer": "prepared",
+        "requirements": "R1-R4",
+        "rule_id": "DQ-P03"
+      },
+      "severity": "critical",
+      "type": "expect_compound_columns_to_be_unique"
+    },
+    {
+      "id": "1c91cf26-d648-43e7-a329-29866953c820",
+      "kwargs": {
+        "column": "year",
+        "max_value": 2018.0,
+        "min_value": 1958.0
+      },
+      "meta": {
+        "layer": "prepared",
+        "requirements": "R1,R3",
+        "rule_id": "DQ-P05"
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_be_between"
+    }
+  ],
+  "id": "b727e181-6902-4920-aaae-02e083abb382",
+  "meta": {
+    "great_expectations_version": "1.23.2"
+  },
+  "name": "fact_award_suite",
+  "notes": null
+}

@@ -1,0 +1,20 @@
+{
+  "source": "grammy",
+  "run_id": "manual__2026-10-17T06:32:28.193035+00:00",
+  "extracted_at_utc": "2026-10-17T06:32:31Z",
+  "origin": {
+    "type": "postgresql",
+    "database": "grammy_source",
+    "table": "grammy_awards",
+    "query": "SELECT year, category, nominee, artist, winner FROM grammy_awards ORDER BY id"
+  },
+  "rows": 4810,
+  "columns": [
+    "year",
+    "category",
+    "nominee",
+    "artist",
+    "winner"
+  ],
+  "output": "/opt/airflow/data/work/manual__2026-10-17T06-32-28.193035-00-00/raw/grammy_raw.csv"
+}

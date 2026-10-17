@@ -1,0 +1,67 @@
+== v_kpi_resumen
+-[ RECORD 1 ]-------------------------+-------
+artistas_premiados                    | 560
+premios_atribuidos                    | 1478
+popularidad_mediana_premiados         | 47.0
+pct_popularidad_cero_premiados        | 10.78
+genero_con_mas_premiados              | rock
+pct_genero_top                        | 12.14
+mediana_pct_colaboracion_premiados    | 23.53
+mediana_pct_colaboracion_no_premiados | 33.33
+correlacion_premios_popularidad       | -0.006
+
+== v_kpi_r1_decada
+ decade | artistas_premiados | canciones | popularidad_mediana | pct_popularidad_cero | danceability_media | energy_media | valence_media | acousticness_media | tempo_medio 
+--------+--------------------+-----------+---------------------+----------------------+--------------------+--------------+---------------+--------------------+-------------
+   1950 |                 11 |        57 |                 2.0 |                42.11 |              0.503 |        0.316 |         0.500 |              0.793 |       111.8
+   1960 |                 45 |       461 |                54.0 |                16.92 |              0.525 |        0.438 |         0.583 |              0.562 |       115.6
+   1970 |                 63 |       456 |                43.0 |                15.57 |              0.530 |        0.484 |         0.564 |              0.543 |       114.8
+   1980 |                117 |       900 |                24.0 |                11.00 |              0.545 |        0.481 |         0.537 |              0.498 |       116.6
+   1990 |                158 |      1726 |                45.0 |                 7.36 |              0.533 |        0.555 |         0.512 |              0.388 |       118.2
+   2000 |                214 |      1843 |                43.0 |                11.45 |              0.568 |        0.628 |         0.523 |              0.318 |       120.7
+   2010 |                186 |      1798 |                54.0 |                11.01 |              0.572 |        0.612 |         0.487 |              0.316 |       121.4
+(7 rows)
+
+== v_kpi_r2_genero (top 10)
+   genero    | artistas_premiados | pct_de_premiados | canciones | popularidad_mediana 
+-------------+--------------------+------------------+-----------+---------------------
+ rock        |                 68 |            12.14 |       173 |                 1.0
+ soul        |                 67 |            11.96 |       233 |                 1.0
+ country     |                 56 |            10.00 |       151 |                 1.0
+ blues       |                 49 |             8.75 |       170 |                57.0
+ jazz        |                 48 |             8.57 |       151 |                 0.0
+ disco       |                 46 |             8.21 |       124 |                65.0
+ alternative |                 45 |             8.04 |       139 |                65.0
+ alt-rock    |                 44 |             7.86 |       136 |                65.0
+ latin       |                 42 |             7.50 |       103 |                 1.0
+ dance       |                 41 |             7.32 |       140 |                74.5
+(10 rows)
+
+== v_kpi_r3_colaboracion
+    grupo     | decade | artistas | mediana_pct_colaboracion 
+--------------+--------+----------+--------------------------
+ No premiados |        |     5381 |                    33.33
+ Premiados    |   1950 |        3 |                    16.67
+ Premiados    |   1960 |       19 |                    30.43
+ Premiados    |   1970 |       23 |                     4.82
+ Premiados    |   1980 |       37 |                    16.67
+ Premiados    |   1990 |       69 |                    14.49
+ Premiados    |   2000 |      105 |                    25.00
+ Premiados    |   2010 |      102 |                    42.62
+(8 rows)
+
+== v_kpi_r4_tramos
+ tramo_premios | orden | artistas | popularidad_mediana | correlacion_premios_popularidad 
+---------------+-------+----------+---------------------+---------------------------------
+ 1             |     1 |      283 |                44.5 |                          -0.006
+ 2-4           |     2 |      189 |                49.0 |                          -0.006
+ 5+            |     3 |       88 |                41.0 |                          -0.006
+(3 rows)
+
+== Prueba de mínimo privilegio (dashboard_user)
+ artistas_premiados 
+--------------------
+                560
+(1 row)
+
+ERROR:  permission denied for table fact_award

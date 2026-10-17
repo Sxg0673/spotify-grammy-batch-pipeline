@@ -1,0 +1,160 @@
+{
+  "gate": "grammy_raw",
+  "run_id": "manual__2026-10-17T05:54:39.225421+00:00",
+  "validated_at_utc": "2026-10-17T05:55:13Z",
+  "rows_validated": 4810,
+  "max_severity_failure": "warning",
+  "action": "CONTINUE WITH WARNING",
+  "expectations": [
+    {
+      "rule_id": "DQ-G01",
+      "expectation": "expect_table_columns_to_match_set",
+      "column": "(tabla)",
+      "severity": "critical",
+      "success": true,
+      "unexpected_count": null,
+      "unexpected_percent": null,
+      "partial_unexpected_list": []
+    },
+    {
+      "rule_id": "DQ-G01",
+      "expectation": "expect_table_row_count_to_be_between",
+      "column": "(tabla)",
+      "severity": "critical",
+      "success": true,
+      "unexpected_count": null,
+      "unexpected_percent": null,
+      "partial_unexpected_list": []
+    },
+    {
+      "rule_id": "DQ-G05",
+      "expectation": "expect_compound_columns_to_be_unique",
+      "column": [
+        "year",
+        "category",
+        "nominee"
+      ],
+      "severity": "critical",
+      "success": true,
+      "unexpected_count": 0,
+      "unexpected_percent": 0.0,
+      "partial_unexpected_list": []
+    },
+    {
+      "rule_id": "DQ-G06",
+      "expectation": "expect_compound_columns_to_be_unique",
+      "column": [
+        "year",
+        "category"
+      ],
+      "severity": "warning",
+      "success": false,
+      "unexpected_count": 495,
+      "unexpected_percent": 10.291060291060292,
+      "partial_unexpected_list": [
+        {
+          "year": 2019,
+          "category": "Record Of The Year"
+        },
+        {
+          "year": 2019,
+          "category": "Record Of The Year"
+        },
+        {
+          "year": 2019,
+          "category": "Record Of The Year"
+        },
+        {
+          "year": 2019,
+          "category": "Record Of The Year"
+        },
+        {
+          "year": 2019,
+          "category": "Record Of The Year"
+        }
+      ]
+    },
+    {
+      "rule_id": "DQ-G02",
+      "expectation": "expect_column_values_to_not_be_null",
+      "column": "year",
+      "severity": "critical",
+      "success": true,
+      "unexpected_count": 0,
+      "unexpected_percent": 0.0,
+      "partial_unexpected_list": []
+    },
+    {
+      "rule_id": "DQ-G02",
+      "expectation": "expect_column_values_to_be_between",
+      "column": "year",
+      "severity": "critical",
+      "success": true,
+      "unexpected_count": 0,
+      "unexpected_percent": 0.0,
+      "partial_unexpected_list": []
+    },
+    {
+      "rule_id": "DQ-G03",
+      "expectation": "expect_column_values_to_not_be_null",
+      "column": "category",
+      "severity": "critical",
+      "success": true,
+      "unexpected_count": 0,
+      "unexpected_percent": 0.0,
+      "partial_unexpected_list": []
+    },
+    {
+      "rule_id": "DQ-G04",
+      "expectation": "expect_column_values_to_not_be_null",
+      "column": "winner",
+      "severity": "critical",
+      "success": true,
+      "unexpected_count": 0,
+      "unexpected_percent": 0.0,
+      "partial_unexpected_list": []
+    },
+    {
+      "rule_id": "DQ-G04",
+      "expectation": "expect_column_values_to_be_in_set",
+      "column": "winner",
+      "severity": "critical",
+      "success": true,
+      "unexpected_count": 0,
+      "unexpected_percent": 0.0,
+      "partial_unexpected_list": []
+    },
+    {
+      "rule_id": "DQ-G07",
+      "expectation": "expect_column_values_to_not_be_null",
+      "column": "artist",
+      "severity": "warning",
+      "success": true,
+      "unexpected_count": 1840,
+      "unexpected_percent": 38.25363825363826,
+      "partial_unexpected_list": [
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN
+      ]
+    },
+    {
+      "rule_id": "DQ-G08",
+      "expectation": "expect_column_values_to_not_be_null",
+      "column": "nominee",
+      "severity": "warning",
+      "success": true,
+      "unexpected_count": 6,
+      "unexpected_percent": 0.12474012474012475,
+      "partial_unexpected_list": [
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN
+      ]
+    }
+  ]
+}

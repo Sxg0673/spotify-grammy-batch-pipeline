@@ -1,0 +1,183 @@
+{
+  "success": true,
+  "results": [
+    {
+      "success": true,
+      "expectation_config": {
+        "type": "expect_table_columns_to_match_set",
+        "kwargs": {
+          "batch_id": "music_pandas_source-fact_award",
+          "column_set": [
+            "year",
+            "category_bk",
+            "nominee",
+            "artist_bk",
+            "award_count"
+          ]
+        },
+        "meta": {
+          "layer": "prepared",
+          "requirements": "R1-R4",
+          "rule_id": "DQ-P01"
+        },
+        "id": "78ac6118-ad59-4a54-ade1-cf0570ab4c54",
+        "severity": "critical"
+      },
+      "result": {
+        "observed_value": [
+          "artist_bk",
+          "award_count",
+          "category_bk",
+          "nominee",
+          "year"
+        ]
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_traceback": null,
+        "exception_message": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "type": "expect_table_row_count_to_be_between",
+        "kwargs": {
+          "batch_id": "music_pandas_source-fact_award",
+          "min_value": 1
+        },
+        "meta": {
+          "layer": "prepared",
+          "requirements": "R1-R4",
+          "rule_id": "DQ-P01"
+        },
+        "id": "de6c9c8e-6306-4650-89d3-32bace1d7ed7",
+        "severity": "critical"
+      },
+      "result": {
+        "observed_value": 1478
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_traceback": null,
+        "exception_message": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "type": "expect_compound_columns_to_be_unique",
+        "kwargs": {
+          "batch_id": "music_pandas_source-fact_award",
+          "column_list": [
+            "year",
+            "category_bk",
+            "nominee",
+            "artist_bk"
+          ]
+        },
+        "meta": {
+          "layer": "prepared",
+          "requirements": "R1-R4",
+          "rule_id": "DQ-P03"
+        },
+        "id": "f154da11-c660-4302-b7e6-8004d5cd6c74",
+        "severity": "critical"
+      },
+      "result": {
+        "element_count": 1478,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "partial_unexpected_list": [],
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_index_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_traceback": null,
+        "exception_message": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "type": "expect_column_values_to_be_between",
+        "kwargs": {
+          "batch_id": "music_pandas_source-fact_award",
+          "column": "year",
+          "min_value": 1958.0,
+          "max_value": 2018.0
+        },
+        "meta": {
+          "layer": "prepared",
+          "requirements": "R1,R3",
+          "rule_id": "DQ-P05"
+        },
+        "id": "1c91cf26-d648-43e7-a329-29866953c820",
+        "severity": "critical"
+      },
+      "result": {
+        "element_count": 1478,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "partial_unexpected_list": [],
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_index_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_traceback": null,
+        "exception_message": null
+      }
+    }
+  ],
+  "suite_name": "fact_award_suite",
+  "suite_parameters": {},
+  "statistics": {
+    "evaluated_expectations": 4,
+    "successful_expectations": 4,
+    "unsuccessful_expectations": 0,
+    "success_percent": 100.0
+  },
+  "meta": {
+    "great_expectations_version": "1.23.2",
+    "batch_spec": {
+      "batch_data": "PandasDataFrame"
+    },
+    "batch_markers": {
+      "ge_load_time": "20261016T175135.351799Z",
+      "pandas_data_fingerprint": "2d7f4cd94ce0c1de5374d637a547c1de"
+    },
+    "active_batch_definition": {
+      "datasource_name": "music_pandas_source",
+      "data_connector_name": "fluent",
+      "data_asset_name": "fact_award",
+      "batch_identifiers": {
+        "dataframe": "<DATAFRAME>"
+      }
+    },
+    "validation_id": "c03bfa8c-8515-47ed-a1e8-44a1b11437c6",
+    "checkpoint_id": null,
+    "run_id": {
+      "run_name": null,
+      "run_time": "2026-10-16T17:51:35.467269+00:00"
+    },
+    "validation_time": "2026-10-16T17:51:35.467269+00:00",
+    "batch_parameters": {
+      "dataframe": "<DATAFRAME>"
+    }
+  },
+  "id": null
+}

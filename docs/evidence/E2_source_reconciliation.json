@@ -1,0 +1,213 @@
+{
+  "generated_utc": "2026-10-16T06:52:06Z",
+  "csv_file": "the_grammy_awards.csv",
+  "csv_sha256": "bae3d6613cb39adb597bb8864fb294144bd55cb452557536f324020266727d88",
+  "table": "grammy_source.grammy_awards",
+  "db_user": "etl_user",
+  "all_ok": true,
+  "checks": [
+    {
+      "check": "filas",
+      "expected": 4810,
+      "csv": 4810,
+      "table": 4810,
+      "ok": true
+    },
+    {
+      "check": "nulos.year",
+      "expected": 0,
+      "csv": 0,
+      "table": 0,
+      "ok": true
+    },
+    {
+      "check": "distintos.year",
+      "expected": 62,
+      "csv": 62,
+      "table": 62,
+      "ok": true
+    },
+    {
+      "check": "nulos.title",
+      "expected": 0,
+      "csv": 0,
+      "table": 0,
+      "ok": true
+    },
+    {
+      "check": "distintos.title",
+      "expected": 62,
+      "csv": 62,
+      "table": 62,
+      "ok": true
+    },
+    {
+      "check": "nulos.published_at",
+      "expected": 0,
+      "csv": 0,
+      "table": 0,
+      "ok": true
+    },
+    {
+      "check": "distintos.published_at",
+      "expected": 4,
+      "csv": 4,
+      "table": 4,
+      "ok": true
+    },
+    {
+      "check": "nulos.updated_at",
+      "expected": 0,
+      "csv": 0,
+      "table": 0,
+      "ok": true
+    },
+    {
+      "check": "distintos.updated_at",
+      "expected": 10,
+      "csv": 10,
+      "table": 10,
+      "ok": true
+    },
+    {
+      "check": "nulos.category",
+      "expected": 0,
+      "csv": 0,
+      "table": 0,
+      "ok": true
+    },
+    {
+      "check": "distintos.category",
+      "expected": 638,
+      "csv": 638,
+      "table": 638,
+      "ok": true
+    },
+    {
+      "check": "nulos.nominee",
+      "expected": 6,
+      "csv": 6,
+      "table": 6,
+      "ok": true
+    },
+    {
+      "check": "distintos.nominee",
+      "expected": 4131,
+      "csv": 4131,
+      "table": 4131,
+      "ok": true
+    },
+    {
+      "check": "nulos.artist",
+      "expected": 1840,
+      "csv": 1840,
+      "table": 1840,
+      "ok": true
+    },
+    {
+      "check": "distintos.artist",
+      "expected": 1658,
+      "csv": 1658,
+      "table": 1658,
+      "ok": true
+    },
+    {
+      "check": "nulos.workers",
+      "expected": 2190,
+      "csv": 2190,
+      "table": 2190,
+      "ok": true
+    },
+    {
+      "check": "distintos.workers",
+      "expected": 2366,
+      "csv": 2366,
+      "table": 2366,
+      "ok": true
+    },
+    {
+      "check": "nulos.img",
+      "expected": 1367,
+      "csv": 1367,
+      "table": 1367,
+      "ok": true
+    },
+    {
+      "check": "distintos.img",
+      "expected": 1463,
+      "csv": 1463,
+      "table": 1463,
+      "ok": true
+    },
+    {
+      "check": "nulos.winner",
+      "expected": 0,
+      "csv": 0,
+      "table": 0,
+      "ok": true
+    },
+    {
+      "check": "distintos.winner",
+      "expected": 1,
+      "csv": 1,
+      "table": 1,
+      "ok": true
+    },
+    {
+      "check": "year_min",
+      "expected": 1958,
+      "csv": 1958,
+      "table": 1958,
+      "ok": true
+    },
+    {
+      "check": "year_max",
+      "expected": 2019,
+      "csv": 2019,
+      "table": 2019,
+      "ok": true
+    },
+    {
+      "check": "winner_true",
+      "expected": 4810,
+      "csv": 4810,
+      "table": 4810,
+      "ok": true
+    },
+    {
+      "check": "cadenas_vacias_en_tabla",
+      "expected": 0,
+      "csv": null,
+      "table": 0,
+      "ok": true
+    },
+    {
+      "check": "sha256_csv_prefijo",
+      "expected": "bae3d6613c",
+      "csv": "bae3d6613c",
+      "table": null,
+      "ok": true
+    },
+    {
+      "check": "filas_solo_en_csv",
+      "expected": 0,
+      "csv": 0,
+      "table": null,
+      "ok": true
+    },
+    {
+      "check": "filas_solo_en_tabla",
+      "expected": 0,
+      "csv": null,
+      "table": 0,
+      "ok": true
+    },
+    {
+      "check": "mismo_orden_de_carga",
+      "expected": true,
+      "csv": null,
+      "table": true,
+      "ok": true
+    }
+  ]
+}

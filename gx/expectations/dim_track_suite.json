@@ -1,0 +1,68 @@
+{
+  "expectations": [
+    {
+      "id": "10dc91de-b49d-4934-aef9-09db12c4efe9",
+      "kwargs": {
+        "column_set": [
+          "track_id",
+          "track_name",
+          "song_bk",
+          "is_song_representative",
+          "audio_analyzed"
+        ]
+      },
+      "meta": {
+        "layer": "prepared",
+        "requirements": "R1-R4",
+        "rule_id": "DQ-P01"
+      },
+      "severity": "critical",
+      "type": "expect_table_columns_to_match_set"
+    },
+    {
+      "id": "78dcc67c-0265-4fec-802c-020af090903e",
+      "kwargs": {
+        "min_value": 1
+      },
+      "meta": {
+        "layer": "prepared",
+        "requirements": "R1-R4",
+        "rule_id": "DQ-P01"
+      },
+      "severity": "critical",
+      "type": "expect_table_row_count_to_be_between"
+    },
+    {
+      "id": "40d884c0-70fd-4551-baac-8d84a6810ba5",
+      "kwargs": {
+        "column": "track_id"
+      },
+      "meta": {
+        "layer": "prepared",
+        "requirements": "R1-R4",
+        "rule_id": "DQ-P02"
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "b24ea9aa-4bdc-4d0b-a2b0-3951fb7d39a1",
+      "kwargs": {
+        "column": "track_id"
+      },
+      "meta": {
+        "layer": "prepared",
+        "requirements": "R1-R4",
+        "rule_id": "DQ-P02"
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_be_unique"
+    }
+  ],
+  "id": "823908bc-599f-4e2b-b55c-0c3a5e2a7d5c",
+  "meta": {
+    "great_expectations_version": "1.23.2"
+  },
+  "name": "dim_track_suite",
+  "notes": null
+}

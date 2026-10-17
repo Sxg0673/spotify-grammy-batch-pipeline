@@ -1,0 +1,24 @@
+{
+  "source": "spotify",
+  "run_id": "manual__2026-10-17T05:54:39.225421+00:00",
+  "extracted_at_utc": "2026-10-17T05:54:53Z",
+  "origin": {
+    "type": "csv",
+    "path": "/opt/airflow/data/raw/spotify_dataset.csv",
+    "sha256": "b202fa49909b2d5cef71a04b1d21243cfeb36414535f2ca9272aa646721177bd"
+  },
+  "rows": 114000,
+  "columns": [
+    "track_id",
+    "artists",
+    "track_name",
+    "track_genre",
+    "popularity",
+    "danceability",
+    "energy",
+    "valence",
+    "acousticness",
+    "tempo"
+  ],
+  "output": "/opt/airflow/data/work/manual__2026-10-17T05-54-39.225421-00-00/raw/spotify_raw.csv"
+}

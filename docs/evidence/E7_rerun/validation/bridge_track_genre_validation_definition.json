@@ -1,0 +1,138 @@
+{
+  "success": true,
+  "results": [
+    {
+      "success": true,
+      "expectation_config": {
+        "type": "expect_table_columns_to_match_set",
+        "kwargs": {
+          "batch_id": "music_pandas_source-bridge_track_genre",
+          "column_set": [
+            "track_id",
+            "genre_name"
+          ]
+        },
+        "meta": {
+          "layer": "prepared",
+          "requirements": "R1-R4",
+          "rule_id": "DQ-P01"
+        },
+        "id": "728d76a4-5266-41ac-978a-95e00f9fec0e",
+        "severity": "critical"
+      },
+      "result": {
+        "observed_value": [
+          "genre_name",
+          "track_id"
+        ]
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_traceback": null,
+        "exception_message": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "type": "expect_table_row_count_to_be_between",
+        "kwargs": {
+          "batch_id": "music_pandas_source-bridge_track_genre",
+          "min_value": 1
+        },
+        "meta": {
+          "layer": "prepared",
+          "requirements": "R1-R4",
+          "rule_id": "DQ-P01"
+        },
+        "id": "78aa50df-3766-4d40-ba30-6cba5844cabf",
+        "severity": "critical"
+      },
+      "result": {
+        "observed_value": 113549
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_traceback": null,
+        "exception_message": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "type": "expect_compound_columns_to_be_unique",
+        "kwargs": {
+          "batch_id": "music_pandas_source-bridge_track_genre",
+          "column_list": [
+            "track_id",
+            "genre_name"
+          ]
+        },
+        "meta": {
+          "layer": "prepared",
+          "requirements": "R1-R4",
+          "rule_id": "DQ-P03"
+        },
+        "id": "a8a78946-14ab-4a3f-96ce-6837c0e6efe0",
+        "severity": "critical"
+      },
+      "result": {
+        "element_count": 113549,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "partial_unexpected_list": [],
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_index_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_traceback": null,
+        "exception_message": null
+      }
+    }
+  ],
+  "suite_name": "bridge_track_genre_suite",
+  "suite_parameters": {},
+  "statistics": {
+    "evaluated_expectations": 3,
+    "successful_expectations": 3,
+    "unsuccessful_expectations": 0,
+    "success_percent": 100.0
+  },
+  "meta": {
+    "great_expectations_version": "1.23.2",
+    "batch_spec": {
+      "batch_data": "PandasDataFrame"
+    },
+    "batch_markers": {
+      "ge_load_time": "20261017T055546.496050Z",
+      "pandas_data_fingerprint": "472bb105763f29a4e9ce5b77732712a6"
+    },
+    "active_batch_definition": {
+      "datasource_name": "music_pandas_source",
+      "data_connector_name": "fluent",
+      "data_asset_name": "bridge_track_genre",
+      "batch_identifiers": {
+        "dataframe": "<DATAFRAME>"
+      }
+    },
+    "validation_id": "83c16511-66a1-4266-82e7-b4722750b209",
+    "checkpoint_id": null,
+    "run_id": {
+      "run_name": null,
+      "run_time": "2026-10-17T05:55:46.745533+00:00"
+    },
+    "validation_time": "2026-10-17T05:55:46.745533+00:00",
+    "batch_parameters": {
+      "dataframe": "<DATAFRAME>"
+    }
+  },
+  "id": null
+}

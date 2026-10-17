@@ -1,0 +1,22 @@
+{
+  "data": {
+    "asset": {
+      "id": "ef03f876-55e8-4133-ba65-40d306498640",
+      "name": "dim_artist"
+    },
+    "batch_definition": {
+      "id": "7799aa2c-e6f7-4a8f-b5f0-4d9baeaebd47",
+      "name": "dim_artist_batch"
+    },
+    "datasource": {
+      "id": "b5720da9-ce00-46e3-ba4a-44023ef248c2",
+      "name": "music_pandas_source"
+    }
+  },
+  "id": "221902d0-fb4f-4554-b7dc-5856fce12a10",
+  "name": "dim_artist_validation_definition",
+  "suite": {
+    "id": "02577d14-dd4d-42e3-9963-529cd4e7b50e",
+    "name": "dim_artist_suite"
+  }
+}

@@ -13,3 +13,18 @@ __pycache__/
 
 # Archivos del sistema macOS
 .DS_Store
+
+# Airflow: generado en ejecución
+logs/*
+!logs/.gitkeep
+config/airflow.cfg
+
+# Datos intermedios por corrida
+data/work/
+
+# Fuentes alteradas para pruebas (se regeneran con src/make_bad_source.py)
+data/raw/*_bad.csv
+
+# Archivos temporales de Tableau
+.~*
+*.twbr
