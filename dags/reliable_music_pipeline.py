@@ -40,7 +40,7 @@ def _run_id():
     start_date=pendulum.datetime(2026, 1, 1, tz="UTC"),
     catchup=False,
     max_active_runs=1,
-    default_args={"retries": 0},
+    default_args={"retries": 1, "retry_delay": timedelta(seconds=10)},
     params={
         "spotify_source": Param(
             "spotify_dataset.csv", type="string",

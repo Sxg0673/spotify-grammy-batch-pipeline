@@ -1,0 +1,22 @@
+{
+  "run_id": "manual__2026-10-17T05:54:39.225421+00:00",
+  "loaded_at_utc": "2026-10-17T05:56:12Z",
+  "strategy": "truncate-and-load en una transacción",
+  "rows": {
+    "fact_track_artist": 123424,
+    "fact_award": 1478,
+    "bridge_track_genre": 113549,
+    "dim_track": 89740,
+    "dim_genre": 114,
+    "dim_category": 628,
+    "dim_year": 61,
+    "dim_artist": 29796
+  },
+  "controls": {
+    "fact_award_filas": 1478,
+    "premios_totales": 1478,
+    "artistas_premiados": 560,
+    "popularidad_media": 33.4471,
+    "energia_media": 0.626952
+  }
+}
